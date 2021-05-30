@@ -37,5 +37,6 @@ public class Cliente {
   private String celular;
   private String contrasena;
   private String estado;
+  private Long idProvincia;
 
 }
