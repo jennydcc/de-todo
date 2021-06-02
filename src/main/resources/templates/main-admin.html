@@ -1,7 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@include file="_header.jsp" %>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<th:block th:replace="header"></th:block>
 <div class="container mt-5">
-  <div class="row" >
+  <div class="row">
     <div class="col-12 col-md-8">
       <h3>Back Office Admin</h3>
       <h6 class="text-black-50">Bienvenido admin</h6>
@@ -11,4 +14,6 @@
     </div>
   </div>
 </div>
-<%@include file="_footer.jsp" %>
+<th:block th:replace="footer"></th:block>
+
+</html>

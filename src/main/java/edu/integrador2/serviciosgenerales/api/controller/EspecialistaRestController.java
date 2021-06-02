@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/api/v1/especialistas")
-public class EspecialistaController {
+public class EspecialistaRestController {
 
   @Autowired
   EspecialistaService especialistaService;
@@ -35,7 +35,7 @@ public class EspecialistaController {
 
   @PostMapping()
   public Especialista guardar(@RequestBody Especialista model) {
-    return especialistaService.crear(model);
+    return especialistaService.registrar(model);
   }
 
   @PutMapping(value = "/{id}")

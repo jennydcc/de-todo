@@ -10,18 +10,16 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Especialista implementa UserDetails para el proceso de autenticación
+ */
 @Entity
 @Getter
 @Setter
 @Table(name = "especialista2")
-public class Especialista {
-
+public class Especialista extends Usuario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "idESPECIALISTA", unique = true, nullable = false)
+  @Column(name = "id_especialista", unique = true, nullable = false)
   private Long id;
-  private String nombre;
-  private String edad;
-  private String sexo;
-
 }

@@ -14,6 +14,9 @@
     <div class="container pt-2 pb-4 d-flex justify-content-end">
       <div>Sunday 23<sup>th</sup> May 2021 10:27</div>
     </div>
+    <div class="container" th:if=" ${usuario}" style="background-color: yellow; color: red;">
+      Bienvenido <span th:text="${usuario.nombre}"></span>
+    </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -40,7 +43,10 @@
           </li>
         </ul>
         <div class="d-flex">
-          <a href="login" class="btn app-btn-login">Iniciar Sesión</a>
+          <a th:if="${usuario}==null" href="login" class="btn app-btn-login">Iniciar Sesión</a>
+          <form th:if="${usuario}" name="logoutForm" th:action="@{/logout}" method="post">
+            <input type="submit" value="Cerrar Sesión" class="btn app-btn-login" />
+          </form>
         </div>
       </div>
     </div>
@@ -49,7 +55,7 @@
     <div class="container pt-2 pb-2 d-flex justify-content-end">
       <div>
         <b>Eres administrador</b>
-        <a href="mainAdmin.jsp" class="btn app-bg-darken-primary text-white">Click aquí</a>
+        <a href="main-admin.jsp" class="btn app-bg-darken-primary text-white">Click aquí</a>
       </div>
     </div>
   </div>
