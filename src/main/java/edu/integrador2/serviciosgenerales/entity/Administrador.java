@@ -16,10 +16,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "especialista2")
-public class Especialista extends Usuario {
+@Table(name = "administrador2")
+public class Administrador extends Usuario {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_especialista", unique = true, nullable = false)
+  @Column(name = "id_administrador", unique = true, nullable = false)
   private Long id;
 }

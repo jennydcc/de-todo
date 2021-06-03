@@ -16,5 +16,10 @@ public class AdministradorController {
     uiModel.addAttribute("usuario", usuario);
     return "main-admin";
   }
-
+  @GetMapping("/administrador/login")
+  public String loginAdministrador(Model uiModel) throws Exception {
+    Usuario usuario = SessionManager.getUsuario();
+    uiModel.addAttribute("usuario", usuario);
+    return "administrador/login";
+  }
 }

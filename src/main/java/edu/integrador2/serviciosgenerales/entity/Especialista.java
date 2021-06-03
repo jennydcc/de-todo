@@ -22,4 +22,6 @@ public class Especialista extends Usuario {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_especialista", unique = true, nullable = false)
   private Long id;
+  private String apellidoPaterno;
+  private String apellidoMaterno;
 }

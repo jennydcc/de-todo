@@ -14,7 +14,7 @@ import edu.integrador2.serviciosgenerales.service.ClienteService;
 
 @RestController
 @RequestMapping("/api/v1/clientes")
-public class ClienteController {
+public class ClienteRestController {
   @Autowired
   ClienteService clienteService;
 
