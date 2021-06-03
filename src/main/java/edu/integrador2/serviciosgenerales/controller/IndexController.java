@@ -1,5 +1,7 @@
 package edu.integrador2.serviciosgenerales.controller;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -8,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.integrador2.serviciosgenerales.entity.Cliente;
-import edu.integrador2.serviciosgenerales.entity.Usuario;
-import edu.integrador2.serviciosgenerales.security.SessionManager;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 
@@ -23,8 +23,7 @@ public class IndexController {
 
   @GetMapping("/")
   public String index(Model uiModel) throws Exception {
-    Usuario usuario = SessionManager.getUsuario();
-    uiModel.addAttribute("usuario", usuario);
+    Template.addGlobalAttributes(uiModel);
     return "home";
   }
 
@@ -36,7 +35,7 @@ public class IndexController {
   @PostMapping(path = "/registrar-cliente", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String postRegistrarCliente(Cliente cliente, Model uiModel) {
     clienteService.guardarCliente(cliente);
-    uiModel.addAttribute("mensaje", "Usurio registrado");
+    Template.addGlobalAttributes(uiModel);
     return "cliente/registrar";
   }
 

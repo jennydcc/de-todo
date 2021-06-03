@@ -3,7 +3,6 @@ package edu.integrador2.serviciosgenerales.security;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,19 +22,17 @@ public class SessionManager {
         return instance;
     }
 
-    public static Usuario getUsuario() throws Exception {
+    public static Usuario getUsuario() {
         return instance.get();
     }
 
-    public Usuario get() throws Exception {
+    public Usuario get() {
         Usuario usuario = null;
         try {
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            if (auth != null) {
-                usuario = (Usuario) auth.getPrincipal();
+            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (principal instanceof Usuario) {
+                usuario = (Usuario) principal;
             }
-        } catch (ClassCastException e) {
-            log.error(e.getMessage(), e);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
