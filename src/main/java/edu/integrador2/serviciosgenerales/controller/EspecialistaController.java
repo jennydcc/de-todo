@@ -47,11 +47,13 @@ public class EspecialistaController {
   @GetMapping("/especialista/servicios-requeridos")
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 0);
     return "especialista/servicios-requeridos";
   }
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 1);
     return "especialista/registrarservicio";
   }
 }

@@ -53,4 +53,11 @@ public class ClienteController {
     Template.addPageIndex(uiModel, 1);
     return "cliente/solicitar-servicio";
   }
+
+  @GetMapping("/cliente/reportes")
+  public String reportesclientes(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 1);
+    return "cliente/reportes";
+  }
 }
