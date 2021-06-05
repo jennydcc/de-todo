@@ -13,4 +13,8 @@ public class Template {
     uiModel.addAttribute("hoy", Calendar.getInstance());
     uiModel.addAttribute("usuario", usuario);
   }
+
+  public static void addPageIndex(Model uiModel, int index) {
+    uiModel.addAttribute("pageIndex", index);
+  }
 }

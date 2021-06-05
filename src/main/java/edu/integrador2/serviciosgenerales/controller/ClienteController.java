@@ -43,12 +43,14 @@ public class ClienteController {
   @GetMapping("/cliente/servicios-solicitados")
   public String serviciosSolicitados(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 0);
     return "cliente/servicios-solicitados";
   }
 
   @GetMapping("/cliente/solicitar-servicio")
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 1);
     return "cliente/solicitar-servicio";
   }
 }

@@ -1,17 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-
 <th:block th:replace="header"></th:block>
-<div class="container mt-5">
-  <div class="row">
-    <h1>Panel de actividades - Clientes</h1>
-    <div>
-      <a href="/cliente/servicios-solicitados" class="text-primary">Servicios Solicitados</a>
-      <a href="/cliente/solicitar-servicio">Solicitar servicio</a>
-    </div>
-  </div>
-</div>
+<th:block th:replace="cliente/_header"></th:block>
 <th:block th:replace="footer"></th:block>
 
 </html>
