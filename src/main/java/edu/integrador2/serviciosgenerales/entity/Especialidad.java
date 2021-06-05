@@ -5,23 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Especialista implementa UserDetails para el proceso de autenticación
- */
+@Data
 @Entity
 @Getter
 @Setter
-@Table(name = "administrador")
-public class Administrador extends Usuario {
-  private String tipoUsuario = "ADMINISTRADOR";
-
+public class Especialidad {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_administrador", unique = true, nullable = false)
+  @Column(name = "id_especialidad", unique = true, nullable = false)
   private Long id;
+  private String nombre;
+  private String nombre2;
 }

@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,21 +12,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "cliente")
-public class Cliente extends Usuario {
-  private String tipoUsuario = "CLIENTE";
+public class Servicio {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_cliente", unique = true, nullable = false)
+  @Column(name = "id_servicio", unique = true, nullable = false)
   private Long id;
-  private String apellidoPaterno;
-  private String apellidoMaterno;
+  private Long idEspecialidad;
+  private Long idEspecialista;
+  private Long idCliente;
+  private String detalle;
+  private String fecha;
   private String telefono;
   private String direccion;
-  private String distrito;
-  private String sexo;
-  private String tipoDocumento;
-  private String numeroDocumento;
-  private Boolean aceptaAcuerdo;
-
 }
