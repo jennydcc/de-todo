@@ -1,0 +1,10 @@
+Screen 1- Pantalla Principal
+Screen 1- Registro Especialista
+Screen 1- Registro Cliente
+Screen 1- Pantalla Logueo
+Screen 1- Logueo Cliente     direcciona pantalla Screen 1- Solicitar Servicio
+Screen 1- Logueo Especialista direcciona a pantalla Screen 1- Actividades Especialista
+
+
+el javax srvlet agregar a la ruta 
+C:\Program Files\Java\jdk1.8.0_111\jre\lib

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<th:block th:replace="header"></th:block>
+<th:block th:replace="cliente/_header"></th:block>
+<div class="container">
+  <h1>Solicitar Servicio</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3 row">
+        <label for="direccion" class="col-sm-3 col-form-label">Categoría</label>
+        <div class="col-sm-9">
+          <select class="form-select form-select-sm" name="idEspecialidad" required>
+            <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+          </select>
+          <button type="button" class="btn btn-primary">Buscar Especialista</button>
+        </div>
+        
+      </div>
+      <div class="mb-3 row">
+        <label for="direccion" class="col-sm-3 col-form-label">Especialista</label>
+        <div class="col-sm-9">
+          <select class="form-select form-select-sm" name="idEspecialista" required>
+            <option th:each="item: ${especialistas}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</div>
+
+<th:block th:replace="footer"></th:block>
+
+</html>
