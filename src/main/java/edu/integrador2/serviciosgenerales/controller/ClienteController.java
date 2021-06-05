@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.integrador2.serviciosgenerales.entity.Cliente;
+import edu.integrador2.serviciosgenerales.entity.Servicio;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
+import edu.integrador2.serviciosgenerales.service.ServicioService;
 
 @Controller
 public class ClienteController {
@@ -19,6 +21,8 @@ public class ClienteController {
 
   @Autowired
   EspecialidadService especialidadService;
+  @Autowired
+  ServicioService servicioService;
   @Autowired
   EspecialistaService especialistaService;
 
@@ -54,6 +58,10 @@ public class ClienteController {
     return "cliente/servicios-solicitados";
   }
 
+  /**
+   * Soliicitar servicio
+   */
+  // Vista
   @GetMapping("/cliente/solicitar-servicio")
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
@@ -63,10 +71,17 @@ public class ClienteController {
     return "cliente/solicitar-servicio";
   }
 
+  @PostMapping(path = "/cliente/solicitar-servicio", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
+  public String registrarEspecialista(Servicio model, Model uiModel) {
+    servicioService.registrarSolicitud(model);
+    Template.addGlobalAttributes(uiModel);
+    return "cliente/servicios-solicitados";
+  }
+
   @GetMapping("/cliente/reportes")
   public String reportesclientes(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 1);
+    Template.addPageIndex(uiModel, 2);
     return "cliente/reportes";
   }
 }
