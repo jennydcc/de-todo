@@ -22,5 +22,12 @@ public class Cliente extends Usuario {
   private Long id;
   private String apellidoPaterno;
   private String apellidoMaterno;
+  private String telefono;
+  private String direccion;
+  private String distrito;
+  private String sexo;
+  private String tipoDocumento;
+  private String numeroDocumento;
+  private Boolean aceptaAcuerdo;
 
 }
