@@ -17,7 +17,13 @@ public class EspecialistaController {
   @Autowired
   ClienteService clienteService;
   @Autowired
-  EspecialistaService especialistaService;
+  EspecialistaService entityService;
+
+  @GetMapping("/especialista/")
+  public String homePage(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    return "especialista/servicios-requeridos";
+  }
 
   @GetMapping("/especialista/login")
   public String loginEspecialista(Model uiModel) {
@@ -31,11 +37,11 @@ public class EspecialistaController {
     return "especialista/registrar";
   }
 
-  @PostMapping(path = "/registrar-especialista", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
+  @PostMapping(path = "/especialista/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String registrarEspecialista(Especialista model, Model uiModel) {
-    especialistaService.registrar(model);
+    entityService.registrar(model);
     Template.addGlobalAttributes(uiModel);
-    return "redirect:login-especialista";
+    return "redirect:/especialista/login";
   }
 
   @GetMapping("/especialista/servicios-requeridos")

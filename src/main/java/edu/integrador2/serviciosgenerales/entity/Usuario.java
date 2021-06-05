@@ -26,7 +26,6 @@ import lombok.Setter;
 public abstract class Usuario extends BaseEntity<Long> implements UserDetails {
 
   private String nombre;
-  private TipoUsuario tipoUsuario = TipoUsuario.ESPECIALISTA;
 
   @Column(unique = true, nullable = false)
   private String correo;
@@ -40,9 +39,11 @@ public abstract class Usuario extends BaseEntity<Long> implements UserDetails {
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
 
-    final SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(tipoUsuario.name());
+    final SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(getTipoUsuario());
     return Collections.singletonList(simpleGrantedAuthority);
   }
+
+  public abstract String getTipoUsuario();
 
   @Override
   public String getPassword() {

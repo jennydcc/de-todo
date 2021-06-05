@@ -12,7 +12,7 @@
 <body>
   <div>
     <div class="container pt-2 pb-4 d-flex justify-content-end">
-      <div ><span th:text="${#calendars.format(hoy,'EEEE ''de'' dd M MMMM yyyy')}"></span></div>
+      <div ><span th:text="${#calendars.format(hoy,'EEEE dd ''de''   MMMM ''de'' yyyy')}"></span></div>
     </div>
     <div class="container" th:if="${usuario}" style="background-color: yellow; color: red;">
       Bienvenido <span th:text="${usuario.nombre}"></span>

@@ -16,8 +16,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "especialista2")
+@Table(name = "especialista")
 public class Especialista extends Usuario {
+  private String tipoUsuario = "ESPECIALISTA";
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_especialista", unique = true, nullable = false)

@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <h3>Registro de Especialistas</h3>
-    <form role="form" th:action="@{/registrar-especialista}" th:method="post" th:object="${user}" class="mt-2">
+    <form role="form" th:action="@{/especialista/registrar}" th:method="post" class="mt-2">
       <div class="row">
         <div class="col-12 col-lg-5">
           <div class="mb-3 row">
@@ -15,7 +15,7 @@
               <input type="text" id="nombre" name="nombre" class="form-control" required>
             </div>
           </div>
-          <div class="mb-3 row">
+<!--           <div class="mb-3 row">
             <label for="apellidoPaterno" class="col-sm-3 col-form-label">Apellido Paterno</label>
             <div class="col-sm-9">
               <input type="text" id="nombre" name="apellidoPaterno" class="form-control" required>
@@ -32,7 +32,7 @@
             <div class="col-sm-9">
               <input type="text" id="sexo" name="sexo" class="form-control" required>
             </div>
-          </div>
+          </div> -->
           <div class="mb-3 row">
             <label for="correo" class="col-sm-3 col-form-label">Correo</label>
             <div class="col-sm-9">
@@ -45,12 +45,12 @@
               <input type="password" id="contrasena" name="contrasena" class="form-control" required>
             </div>
           </div>
-          <div class="mb-3 row">
+<!--           <div class="mb-3 row">
             <label for="contrasena2" class="col-sm-3 col-form-label">Repetir contraseña</label>
             <div class="col-sm-9">
               <input type="password" id="contrasena2" name="contrasena2" class="form-control" required>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div>

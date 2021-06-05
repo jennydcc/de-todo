@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AdministradorController {
 
-  @GetMapping("/main-admin")
-  public String mainAdmin(Model uiModel) throws Exception {
+  @GetMapping("/administrador/")
+  public String inicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
-    return "main-admin";
+    return "administrador/inicio";
   }
 
   @GetMapping("/administrador/login")
-  public String loginAdministrador(Model uiModel) throws Exception {
+  public String loginAdministrador(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
     return "administrador/login";
   }

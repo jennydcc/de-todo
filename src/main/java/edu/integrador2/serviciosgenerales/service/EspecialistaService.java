@@ -2,6 +2,7 @@ package edu.integrador2.serviciosgenerales.service;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +15,6 @@ import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.repository.EspecialistaRepository;
 import lombok.AllArgsConstructor;
 
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service

@@ -29,10 +29,14 @@ public class SessionManager {
     public Usuario get() {
         Usuario usuario = null;
         try {
-            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            if (principal instanceof Usuario) {
-                usuario = (Usuario) principal;
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            if (authentication != null) {
+                Object principal = authentication.getPrincipal();
+                if (principal instanceof Usuario) {
+                    usuario = (Usuario) principal;
+                }
             }
+
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

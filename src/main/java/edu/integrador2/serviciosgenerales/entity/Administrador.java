@@ -16,8 +16,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "administrador2")
+@Table(name = "administrador")
 public class Administrador extends Usuario {
+  private String tipoUsuario = "ADMINISTRADOR";
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
