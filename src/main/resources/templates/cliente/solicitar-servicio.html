@@ -11,9 +11,8 @@
       <div class="mb-3 row">
         <label for="direccion" class="col-sm-3 col-form-label">Categoría</label>
         <div class="col-sm-9">
-          <select class="form-select form-select-sm" name="idCategoria" required>
-            <option value="1">Gasfitería</option>
-            <option value="2">Elctricidad</option>
+          <select class="form-select form-select-sm" name="idEspecialidad" required>
+            <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
           </select>
           <button type="button" class="btn btn-primary">Buscar Especialista</button>
         </div>
@@ -23,8 +22,7 @@
         <label for="direccion" class="col-sm-3 col-form-label">Especialista</label>
         <div class="col-sm-9">
           <select class="form-select form-select-sm" name="idEspecialista" required>
-            <option value="1">Gasfitería</option>
-            <option value="2">Elctricidad</option>
+            <option th:each="item: ${especialistas}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
           </select>
         </div>
       </div>
