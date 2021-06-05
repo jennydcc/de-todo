@@ -1,4 +1,4 @@
--- CREATE DATABASE `detodo` CHARACTER SET utf8 COLLATE utf8_unicode_ci
+--CREATE DATABASE `detodo` CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- Especialidades
 INSERT INTO `detodo`.`especialidad` (`id_especialidad`, `nombre`) VALUES ('1', 'Gasfitería');
