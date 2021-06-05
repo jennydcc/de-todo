@@ -9,11 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.integrador2.serviciosgenerales.entity.Cliente;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
+import edu.integrador2.serviciosgenerales.service.EspecialidadService;
+import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 
 @Controller
 public class ClienteController {
   @Autowired
   ClienteService entityService;
+
+  @Autowired
+  EspecialidadService especialidadService;
+  @Autowired
+  EspecialistaService especialistaService;
 
   @GetMapping("/cliente/")
   public String homePage(Model uiModel) {
@@ -51,6 +58,8 @@ public class ClienteController {
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 1);
+    uiModel.addAttribute("especialidades", especialidadService.listar());
+    uiModel.addAttribute("especialistas", especialistaService.listar());
     return "cliente/solicitar-servicio";
   }
 }
