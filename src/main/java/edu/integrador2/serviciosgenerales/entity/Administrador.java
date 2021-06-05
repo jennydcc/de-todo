@@ -16,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "administrador")
+@Table(name = "administrador2")
 public class Administrador extends Usuario {
   private String tipoUsuario = "ADMINISTRADOR";
 
