@@ -56,4 +56,11 @@ public class EspecialistaController {
     Template.addPageIndex(uiModel, 1);
     return "especialista/registrarservicio";
   }
+
+  @GetMapping("/especialista/comentarios")
+  public String especislistacomentarios(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 2);
+    return "especialista/comentarios";
+  }
 }

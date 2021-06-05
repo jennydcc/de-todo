@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="header"></th:block>
+<th:block th:replace="especialista/_header"></th:block>
+
+<div class="container">
+
+     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Ingrese sus datos</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      <button type="button" class="btn btn-secondary">Enviar</button>
+
+
+</div>
+
+<th:block th:replace="footer"></th:block>
+
+
+</html>
