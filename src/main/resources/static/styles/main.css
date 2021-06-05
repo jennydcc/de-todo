@@ -14,13 +14,20 @@
   padding-left: 32px;
   padding-right: 32px;
 }
-.app-login-input{
+.app-login-input {
   max-width: 320px;
 }
 .app-btn-login {
   background-color: #f76540 !important;
   color: #fff;
   min-width: 240px;
+}
+.app-btn-logout {
+  color: #f93324;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-size: 12px;
 }
 .app-btn-registrarse {
   background-color: #f76540 !important;
@@ -41,6 +48,6 @@
 /**
  * Font sizes
  */
-.fs-11{
+.fs-11 {
   font-size: 11px;
 }
