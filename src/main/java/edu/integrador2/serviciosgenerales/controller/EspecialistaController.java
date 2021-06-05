@@ -49,4 +49,9 @@ public class EspecialistaController {
     Template.addGlobalAttributes(uiModel);
     return "especialista/servicios-requeridos";
   }
+  @GetMapping("/especialista/registrarservicio")
+  public String registrarServicio(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    return "especialista/registrarservicio";
+  }
 }
