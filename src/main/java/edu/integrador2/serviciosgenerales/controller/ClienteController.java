@@ -62,4 +62,11 @@ public class ClienteController {
     uiModel.addAttribute("especialistas", especialistaService.listar());
     return "cliente/solicitar-servicio";
   }
+
+  @GetMapping("/cliente/reportes")
+  public String reportesclientes(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 1);
+    return "cliente/reportes";
+  }
 }
