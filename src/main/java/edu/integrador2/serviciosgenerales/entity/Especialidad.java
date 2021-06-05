@@ -20,5 +20,4 @@ public class Especialidad {
   @Column(name = "id_especialidad", unique = true, nullable = false)
   private Long id;
   private String nombre;
-  private String nombre2;
 }
