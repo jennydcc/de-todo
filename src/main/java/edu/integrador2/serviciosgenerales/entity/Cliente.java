@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "cliente2")
+@Table(name = "cliente")
 public class Cliente extends Usuario {
   private String tipoUsuario = "CLIENTE";
   @Id

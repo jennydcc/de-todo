@@ -42,12 +42,12 @@ public class UsuarioService implements UserDetailsService {
     // Especialista
     final Optional<Especialista> optionalUser2 = especialistaRepository.findByCorreo(email);
     if (optionalUser2.isPresent()) {
-      return optionalUser.get();
+      return optionalUser2.get();
     }
     // Administrador
     final Optional<Administrador> optionalUser3 = administradorRepository.findByCorreo(email);
     if (optionalUser3.isPresent()) {
-      return optionalUser.get();
+      return optionalUser3.get();
     }
     throw new UsernameNotFoundException(MessageFormat.format("User with email {0} cannot be found.", email));
   }
