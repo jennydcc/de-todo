@@ -55,6 +55,7 @@ public class ClienteController {
   public String serviciosSolicitados(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
     return "cliente/servicios-solicitados";
   }
 
