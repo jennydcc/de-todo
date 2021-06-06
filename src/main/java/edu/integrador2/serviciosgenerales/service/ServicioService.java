@@ -4,14 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.integrador2.serviciosgenerales.dto.ServicioDto;
-import edu.integrador2.serviciosgenerales.entity.Cliente;
-import edu.integrador2.serviciosgenerales.entity.Especialidad;
-import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.entity.Servicio;
 import edu.integrador2.serviciosgenerales.repository.ServicioRepository;
 
