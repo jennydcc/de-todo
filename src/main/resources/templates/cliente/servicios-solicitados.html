@@ -22,7 +22,7 @@
         <td th:text="${item.detalle}"></td>
         <td>Gasfitería</td>
         <td>SOLICITADO</td>
-        <td><a href="#">Calificar</a> | <a href="#">Cancelar solicitud</a></td>
+        <td><a href="#">Calificar</a> | <a th:href="@{/servicio/cancelar-solicitud/{id}(id=${item.id})}">Cancelar solicitud</a></td>
       </tr>
     </tbody>
   </table>

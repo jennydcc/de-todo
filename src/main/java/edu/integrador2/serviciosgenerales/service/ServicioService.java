@@ -17,6 +17,10 @@ public class ServicioService {
     return (ArrayList<Servicio>) entityRepositoy.findAll();
   }
 
+  public void eliminar(Long id) {
+    entityRepositoy.deleteById(id);
+  }
+
   public Servicio registrarSolicitud(Servicio model) {
     return entityRepositoy.save(model);
   }
