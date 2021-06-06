@@ -51,6 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         "/js/*",
         "/styles/*",
         "/login",
+        "/api/**",
         "/usuario-login",
         "/cliente/login*",
         "/cliente/registrar*",

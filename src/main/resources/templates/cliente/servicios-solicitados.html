@@ -18,9 +18,9 @@
     </thead>
     <tbody>
       <tr th:each="item: ${serviciosSolicitados}">
-        <td>Esteban</td>
+        <td th:text="${item.especialistaNombre}"></td>
         <td th:text="${item.detalle}"></td>
-        <td>Gasfitería</td>
+        <td th:text="${item.especialidadNombre}"></td>
         <td>SOLICITADO</td>
         <td><a href="#">Calificar</a> | <a th:href="@{/servicio/cancelar-solicitud/{id}(id=${item.id})}">Cancelar solicitud</a></td>
       </tr>

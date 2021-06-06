@@ -29,6 +29,9 @@
   text-decoration: underline;
   font-size: 12px;
 }
+.app-social-icon{
+  margin-right: 4px;
+}
 .app-btn-registrarse {
   background-color: #f76540 !important;
   color: #fff;

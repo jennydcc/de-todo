@@ -1,5 +1,6 @@
 package edu.integrador2.serviciosgenerales.controller;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import edu.integrador2.serviciosgenerales.dto.ServicioDto;
 import edu.integrador2.serviciosgenerales.entity.Cliente;
 import edu.integrador2.serviciosgenerales.entity.Servicio;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
@@ -16,6 +18,8 @@ import edu.integrador2.serviciosgenerales.service.ServicioService;
 
 @Controller
 public class ClienteController {
+  @Autowired
+  private ModelMapper modelMapper;
   @Autowired
   ClienteService entityService;
 
@@ -73,10 +77,11 @@ public class ClienteController {
   }
 
   @PostMapping(path = "/cliente/solicitar-servicio", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
-  public String registrarEspecialista(Servicio model, Model uiModel) {
-    servicioService.registrarSolicitud(model);
+  public String registrarEspecialista(ServicioDto dto, Model uiModel) {
+    Servicio entity = modelMapper.map(dto, Servicio.class);
+    servicioService.registrarSolicitud(entity);
     Template.addGlobalAttributes(uiModel);
-    return "cliente/servicios-solicitados";
+    return "redirect:/cliente/servicios-solicitados";
   }
 
   @GetMapping("/cliente/reportes")
