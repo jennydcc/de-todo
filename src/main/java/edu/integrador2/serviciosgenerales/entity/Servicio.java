@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,9 +19,19 @@ public class Servicio {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_servicio", unique = true, nullable = false)
   private Long id;
-  private Long idEspecialidad;
-  private Long idEspecialista;
-  private Long idCliente;
+  
+  @ManyToOne
+  @JoinColumn(name = "id_especialidad")
+  Especialidad especialidad;
+
+  @ManyToOne
+  @JoinColumn(name = "id_cliente")
+  Cliente cliente;
+
+  @ManyToOne
+  @JoinColumn(name = "id_especialista")
+  Especialista especialista;
+
   private String detalle;
   private String fecha;
   private String telefono;

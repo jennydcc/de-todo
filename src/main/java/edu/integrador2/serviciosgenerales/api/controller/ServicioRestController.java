@@ -1,13 +1,13 @@
 package edu.integrador2.serviciosgenerales.api.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.integrador2.serviciosgenerales.entity.Servicio;
+import edu.integrador2.serviciosgenerales.dto.ServicioDto;
 import edu.integrador2.serviciosgenerales.service.ServicioService;
 
 @RestController
@@ -17,7 +17,7 @@ public class ServicioRestController {
   ServicioService entityService;
 
   @GetMapping()
-  public ArrayList<Servicio> listar() {
+  public List<ServicioDto> listar() {
     return entityService.listar();
   }
 }
