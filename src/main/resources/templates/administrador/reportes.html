@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<th:block th:replace="header"></th:block>
+<th:block th:replace="administrador/_header"></th:block>
+
+
+<div class="container mt-6">
+  <div class="row">
+      <div class="col-sm-6">
+        <p>Fecha de impresión:</p>
+        <p>Hora de impresión:</p>
+      </div>
+      <div class="col-sm-6">
+       <p>
+         <img src="/src/main/resources/static/images/logoserviciosgenerales.png" class="img-fluid" alt="logoserviciosgenerales">
+      </p>
+      </div>
+        </div>
+        <div class="row">
+ <div class="col-sm-10">
+
+ </div>
+ <div class="col-sm-2">
+   <a href="#" class="btn app-bg-darken-primary text-white">Imprimir  <i class="bi bi-printer-fill"></i></a>
+ </div>
+        </div>
+
+  <h3 class=titreporte>REPORTE USUARIOS DEL SISTEMA</h3>
+  <hr class=bar>
+  <form role="form" th:action="@{/cliente/solicitar-servicio}" th:method="post" class="mt-4">
+    <input type="hidden" name="idCliente" th:attr="value=${usuario.id}">
+    
+        <div class="row">
+
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nro.</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Fecha Ingreso</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>igomez@gmail.com</td>
+                <td>Especialista</td>
+                <td>01/05/2021</td>
+                <td>Activo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>martin@mail.com</td>
+                <td>Especialista</td>
+                <td>15/05/2021</td>
+                <td>Activo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>karen@gmail.com</td>
+                <td>Cliente</td>
+                <td>10/05/2021</td>
+                <td>Activo</td>
+              </tr>
+            </tbody>
+</table>
+          
+        </div>
+  </form>
+  </div>
+
+<th:block th:replace="footer"></th:block>
+
+</html>
