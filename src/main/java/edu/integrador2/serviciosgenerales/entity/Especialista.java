@@ -28,13 +28,11 @@ public class Especialista extends Usuario {
   private String apellidoMaterno;
   private String telefono;
   private String direccion;
+  private String departamento;
+  private String provincia;
   private String distrito;
   private String sexo;
   private String tipoDocumento;
   private String numeroDocumento;
-  private String actividad;
-  private String descripcionActividad;
-  private String videoActividad;
-  private String precio;
   private Boolean aceptaAcuerdo;
 }
