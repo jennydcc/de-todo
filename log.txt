@@ -1,0 +1,761 @@
+Apache Maven 3.8.1 (05c21c65bdfed0f71a2f2ada8b84da59348c4c5d)
+Maven home: C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1
+Java version: 11.0.11, vendor: Red Hat, Inc., runtime: C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64
+Default locale: es_PE, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Karen\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\Karen\.m2\toolchains.xml
+[DEBUG] Using local repository at C:\Users\Karen\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\Karen\.m2\repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project edu.integrador2:serviciosgenerales:jar:0.0.1-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:2.5.0: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:2.5.0: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: edu.integrador2:serviciosgenerales:jar:0.0.1-SNAPSHOT
+[DEBUG] Tasks:   [install]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] -----------------< edu.integrador2:serviciosgenerales >-----------------
+[INFO] Building serviciosgenerales 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       edu.integrador2:serviciosgenerales:0.0.1-SNAPSHOT
+[DEBUG] Dependencies (collect): [compile+runtime]
+[DEBUG] Dependencies (resolve): [compile, compile+runtime, runtime, test]
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <propertiesEncoding>UTF-8</propertiesEncoding>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">${maven.compiler.target}</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.2.0:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <propertiesEncoding>UTF-8</propertiesEncoding>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <project default-value="${project}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">${maven.compiler.target}</target>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests>${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests>${failIfNoTests}</failIfNoTests>
+  <forkCount default-value="1">${forkCount}</forkCount>
+  <forkMode default-value="once">${forkMode}</forkMode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <junitPlatformArtifactName default-value="org.junit.platform:junit-platform-engine">${junitPlatformArtifactName}</junitPlatformArtifactName>
+  <jvm>${jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteRepositories default-value="${project.pluginArtifactRepositories}"/>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">${reuseForks}</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <shutdown default-value="testset">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="true">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-jar-plugin:3.2.0:jar (default-jar)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <archive>
+    <manifest>
+      <mainClass>${start-class}</mainClass>
+      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+    </manifest>
+  </archive>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <forceCreation default-value="false">${maven.jar.forceCreation}</forceCreation>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <outputTimestamp default-value="${project.build.outputTimestamp}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skipIfEmpty default-value="false"/>
+  <useDefaultManifestFile default-value="false">${jar.useDefaultManifestFile}</useDefaultManifestFile>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.springframework.boot:spring-boot-maven-plugin:2.5.0:repackage (repackage)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <attach default-value="true"/>
+  <excludeDevtools default-value="true">${spring-boot.repackage.excludeDevtools}</excludeDevtools>
+  <excludeGroupIds default-value="">${spring-boot.excludeGroupIds}</excludeGroupIds>
+  <excludes>
+    <exclude>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </exclude>${spring-boot.excludes}</excludes>
+  <executable default-value="false"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <includeSystemScope default-value="false"/>
+  <includes>${spring-boot.includes}</includes>
+  <layout>${spring-boot.repackage.layout}</layout>
+  <mainClass>${start-class}</mainClass>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <outputTimestamp default-value="${project.build.outputTimestamp}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${spring-boot.repackage.skip}</skip>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-install-plugin:2.5.2:install (default-install)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <artifact default-value="${project.artifact}"/>
+  <attachedArtifacts default-value="${project.attachedArtifacts}"/>
+  <createChecksum default-value="false">${createChecksum}</createChecksum>
+  <installAtEnd default-value="false">${installAtEnd}</installAtEnd>
+  <localRepository>${localRepository}</localRepository>
+  <packaging default-value="${project.packaging}"/>
+  <pomFile default-value="${project.file}"/>
+  <project default-value="${project}"/>
+  <reactorProjects default-value="${reactorProjects}"/>
+  <skip default-value="false">${maven.install.skip}</skip>
+  <updateReleaseInfo default-value="false">${updateReleaseInfo}</updateReleaseInfo>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for ow2-snapshot (http://repository.ow2.org/nexus/content/repositories/snapshots).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for spring-milestones (http://repo.spring.io/milestone).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for vaadin-snapshots (http://oss.sonatype.org/content/repositories/vaadin-snapshots/).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for vaadin-releases (http://oss.sonatype.org/content/repositories/vaadin-releases/).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=2828800, ConflictMarker.markTime=1152300, ConflictMarker.nodeCount=470, ConflictIdSorter.graphTime=1553800, ConflictIdSorter.topsortTime=848800, ConflictIdSorter.conflictIdCount=145, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=32466600, ConflictResolver.conflictItemCount=338, DefaultDependencyCollector.collectTime=1267021200, DefaultDependencyCollector.transformTime=42185100}
+[DEBUG] edu.integrador2:serviciosgenerales:jar:0.0.1-SNAPSHOT
+[DEBUG]    org.springframework.boot:spring-boot-starter-data-jpa:jar:2.5.0:compile
+[DEBUG]       org.springframework.boot:spring-boot-starter-aop:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          org.aspectj:aspectjweaver:jar:1.9.6:compile (version managed from 1.9.6)
+[DEBUG]       org.springframework.boot:spring-boot-starter-jdbc:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          com.zaxxer:HikariCP:jar:4.0.3:compile (version managed from 4.0.3)
+[DEBUG]          org.springframework:spring-jdbc:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]       jakarta.transaction:jakarta.transaction-api:jar:1.3.3:compile (version managed from 1.3.3)
+[DEBUG]       jakarta.persistence:jakarta.persistence-api:jar:2.2.3:compile (version managed from 2.2.3)
+[DEBUG]       org.hibernate:hibernate-core:jar:5.4.31.Final:compile (version managed from 5.4.31.Final)
+[DEBUG]          org.jboss.logging:jboss-logging:jar:3.4.1.Final:compile (version managed from 3.4.1.Final)
+[DEBUG]          org.javassist:javassist:jar:3.27.0-GA:compile
+[DEBUG]          net.bytebuddy:byte-buddy:jar:1.10.22:compile (version managed from 1.10.21)
+[DEBUG]          antlr:antlr:jar:2.7.7:compile (version managed from 2.7.7)
+[DEBUG]          org.jboss:jandex:jar:2.2.3.Final:compile
+[DEBUG]          com.fasterxml:classmate:jar:1.5.1:compile (version managed from 1.5.1)
+[DEBUG]          org.dom4j:dom4j:jar:2.1.3:compile
+[DEBUG]          org.hibernate.common:hibernate-commons-annotations:jar:5.1.2.Final:compile
+[DEBUG]          org.glassfish.jaxb:jaxb-runtime:jar:2.3.4:compile (version managed from 2.3.1)
+[DEBUG]             org.glassfish.jaxb:txw2:jar:2.3.4:compile (version managed from 2.3.4)
+[DEBUG]             com.sun.istack:istack-commons-runtime:jar:3.0.12:compile
+[DEBUG]             com.sun.activation:jakarta.activation:jar:1.2.2:runtime (version managed from 1.2.2)
+[DEBUG]       org.springframework.data:spring-data-jpa:jar:2.5.1:compile (version managed from 2.5.1)
+[DEBUG]          org.springframework.data:spring-data-commons:jar:2.5.1:compile (version managed from 2.5.1)
+[DEBUG]          org.springframework:spring-orm:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]          org.springframework:spring-context:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]          org.springframework:spring-tx:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]          org.springframework:spring-beans:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]       org.springframework:spring-aspects:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]    org.springframework.boot:spring-boot-starter-data-rest:jar:2.5.0:compile
+[DEBUG]       org.springframework.data:spring-data-rest-webmvc:jar:3.5.1:compile (version managed from 3.5.1)
+[DEBUG]          org.springframework.data:spring-data-rest-core:jar:3.5.1:compile (version managed from 3.5.1)
+[DEBUG]             org.springframework.hateoas:spring-hateoas:jar:1.3.1:compile (version managed from 1.3.1)
+[DEBUG]             org.springframework.plugin:spring-plugin-core:jar:2.0.0.RELEASE:compile
+[DEBUG]             org.atteo:evo-inflector:jar:1.2.2:compile
+[DEBUG]          com.fasterxml.jackson.core:jackson-databind:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]             com.fasterxml.jackson.core:jackson-core:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]          com.fasterxml.jackson.core:jackson-annotations:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]    org.springframework.boot:spring-boot-starter-jersey:jar:2.5.0:compile
+[DEBUG]       org.springframework.boot:spring-boot-starter-json:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]          com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]          com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.12.3:compile (version managed from 2.12.3)
+[DEBUG]       org.springframework.boot:spring-boot-starter-tomcat:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile (version managed from 1.3.5)
+[DEBUG]          org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.46:compile (version managed from 9.0.46)
+[DEBUG]          org.apache.tomcat.embed:tomcat-embed-el:jar:9.0.46:compile (version managed from 9.0.46)
+[DEBUG]          org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.46:compile (version managed from 9.0.46)
+[DEBUG]       org.springframework.boot:spring-boot-starter-validation:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          org.hibernate.validator:hibernate-validator:jar:6.2.0.Final:compile (version managed from 6.2.0.Final)
+[DEBUG]       org.springframework:spring-web:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]       org.glassfish.jersey.core:jersey-server:jar:2.33:compile (version managed from 2.33)
+[DEBUG]          org.glassfish.jersey.core:jersey-common:jar:2.33:compile (version managed from 2.33)
+[DEBUG]             org.glassfish.hk2:osgi-resource-locator:jar:1.0.3:compile
+[DEBUG]          org.glassfish.jersey.core:jersey-client:jar:2.33:compile (version managed from 2.33)
+[DEBUG]          jakarta.ws.rs:jakarta.ws.rs-api:jar:2.1.6:compile (version managed from 2.1.6)
+[DEBUG]          org.glassfish.hk2.external:jakarta.inject:jar:2.6.1:compile
+[DEBUG]          jakarta.validation:jakarta.validation-api:jar:2.0.2:compile (version managed from 2.0.2)
+[DEBUG]       org.glassfish.jersey.containers:jersey-container-servlet-core:jar:2.33:compile (version managed from 2.33)
+[DEBUG]       org.glassfish.jersey.containers:jersey-container-servlet:jar:2.33:compile (version managed from 2.33)
+[DEBUG]       org.glassfish.jersey.ext:jersey-bean-validation:jar:2.33:compile (version managed from 2.33)
+[DEBUG]       org.glassfish.jersey.ext:jersey-spring5:jar:2.33:compile (version managed from 2.33)
+[DEBUG]          org.glassfish.jersey.inject:jersey-hk2:jar:2.33:compile (version managed from 2.33)
+[DEBUG]             org.glassfish.hk2:hk2-locator:jar:2.6.1:compile
+[DEBUG]                org.glassfish.hk2.external:aopalliance-repackaged:jar:2.6.1:compile
+[DEBUG]          org.glassfish.hk2:hk2:jar:2.6.1:compile
+[DEBUG]             org.glassfish.hk2:hk2-utils:jar:2.6.1:compile
+[DEBUG]             org.glassfish.hk2:hk2-api:jar:2.6.1:compile
+[DEBUG]             org.glassfish.hk2:hk2-core:jar:2.6.1:compile
+[DEBUG]             org.glassfish.hk2:hk2-runlevel:jar:2.6.1:compile
+[DEBUG]             org.glassfish.hk2:class-model:jar:2.6.1:compile
+[DEBUG]                org.ow2.asm:asm:jar:7.1:compile
+[DEBUG]                org.ow2.asm:asm-analysis:jar:7.1:compile
+[DEBUG]                org.ow2.asm:asm-commons:jar:7.1:compile
+[DEBUG]                org.ow2.asm:asm-tree:jar:7.1:compile
+[DEBUG]                org.ow2.asm:asm-util:jar:7.1:compile
+[DEBUG]          org.glassfish.hk2:spring-bridge:jar:2.6.1:compile
+[DEBUG]       org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.33:compile (version managed from 2.33)
+[DEBUG]          org.glassfish.jersey.ext:jersey-entity-filtering:jar:2.33:compile (version managed from 2.33)
+[DEBUG]          com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.3:compile (version managed from 2.11.3)
+[DEBUG]    org.springframework.boot:spring-boot-starter-security:jar:2.5.0:compile
+[DEBUG]       org.springframework.boot:spring-boot-starter:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          org.springframework.boot:spring-boot-starter-logging:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]             ch.qos.logback:logback-classic:jar:1.2.3:compile (version managed from 1.2.3)
+[DEBUG]                ch.qos.logback:logback-core:jar:1.2.3:compile (version managed from 1.2.3)
+[DEBUG]             org.apache.logging.log4j:log4j-to-slf4j:jar:2.14.1:compile (version managed from 2.14.1)
+[DEBUG]                org.apache.logging.log4j:log4j-api:jar:2.14.1:compile (version managed from 2.14.1)
+[DEBUG]             org.slf4j:jul-to-slf4j:jar:1.7.30:compile (version managed from 1.7.30)
+[DEBUG]          org.yaml:snakeyaml:jar:1.28:compile (version managed from 1.28)
+[DEBUG]       org.springframework:spring-aop:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]       org.springframework.security:spring-security-config:jar:5.5.0:compile (version managed from 5.5.0)
+[DEBUG]          org.springframework.security:spring-security-core:jar:5.5.0:compile (version managed from 5.5.0)
+[DEBUG]          org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.5.0:compile (version managed from 1.5.0)
+[DEBUG]             org.jetbrains.kotlin:kotlin-stdlib:jar:1.5.0:compile (version managed from 1.5.0)
+[DEBUG]                org.jetbrains:annotations:jar:13.0:compile
+[DEBUG]                org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.5.0:compile (version managed from 1.5.0)
+[DEBUG]             org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.5.0:compile (version managed from 1.5.0)
+[DEBUG]       org.springframework.security:spring-security-web:jar:5.5.0:compile (version managed from 5.5.0)
+[DEBUG]          org.springframework:spring-expression:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]    org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.5.0:compile
+[DEBUG]       org.thymeleaf:thymeleaf-spring5:jar:3.0.12.RELEASE:compile (version managed from 3.0.12.RELEASE)
+[DEBUG]          org.thymeleaf:thymeleaf:jar:3.0.12.RELEASE:compile (version managed from 3.0.12.RELEASE)
+[DEBUG]             org.attoparser:attoparser:jar:2.0.5.RELEASE:compile
+[DEBUG]             org.unbescape:unbescape:jar:1.1.6.RELEASE:compile
+[DEBUG]       org.thymeleaf.extras:thymeleaf-extras-java8time:jar:3.0.4.RELEASE:compile (version managed from 3.0.4.RELEASE)
+[DEBUG]    org.springframework.boot:spring-boot-starter-web:jar:2.5.0:compile
+[DEBUG]       org.springframework:spring-webmvc:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]    org.springframework.session:spring-session-core:jar:2.5.0:compile
+[DEBUG]       org.springframework:spring-jcl:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]    org.thymeleaf.extras:thymeleaf-extras-springsecurity5:jar:3.0.4.RELEASE:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.30:compile (version managed from 1.7.25)
+[DEBUG]    org.springframework.boot:spring-boot-devtools:jar:2.5.0:runtime (optional)
+[DEBUG]       org.springframework.boot:spring-boot:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]       org.springframework.boot:spring-boot-autoconfigure:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]    mysql:mysql-connector-java:jar:8.0.25:runtime (exclusions managed from [com.google.protobuf:protobuf-java:*:*])
+[DEBUG]    org.springframework.boot:spring-boot-configuration-processor:jar:2.5.0:compile (optional)
+[DEBUG]    org.projectlombok:lombok:jar:1.18.20:compile (optional)
+[DEBUG]    org.springframework.boot:spring-boot-starter-test:jar:2.5.0:test
+[DEBUG]       org.springframework.boot:spring-boot-test:jar:2.5.0:test (version managed from 2.5.0)
+[DEBUG]       org.springframework.boot:spring-boot-test-autoconfigure:jar:2.5.0:test (version managed from 2.5.0)
+[DEBUG]       com.jayway.jsonpath:json-path:jar:2.5.0:compile (version managed from 2.5.0)
+[DEBUG]          net.minidev:json-smart:jar:2.4.7:compile (version managed from 2.3)
+[DEBUG]             net.minidev:accessors-smart:jar:2.4.7:compile
+[DEBUG]       jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3:compile (version managed from 2.3.3)
+[DEBUG]          jakarta.activation:jakarta.activation-api:jar:1.2.2:compile (version managed from 1.2.2)
+[DEBUG]       org.assertj:assertj-core:jar:3.19.0:test (version managed from 3.19.0)
+[DEBUG]       org.hamcrest:hamcrest:jar:2.2:test (version managed from 2.2)
+[DEBUG]       org.junit.jupiter:junit-jupiter:jar:5.7.2:test (version managed from 5.7.2)
+[DEBUG]          org.junit.jupiter:junit-jupiter-api:jar:5.7.2:test (version managed from 5.7.2)
+[DEBUG]             org.apiguardian:apiguardian-api:jar:1.1.0:test
+[DEBUG]             org.opentest4j:opentest4j:jar:1.2.0:test
+[DEBUG]             org.junit.platform:junit-platform-commons:jar:1.7.2:test (version managed from 1.7.2)
+[DEBUG]          org.junit.jupiter:junit-jupiter-params:jar:5.7.2:test (version managed from 5.7.2)
+[DEBUG]          org.junit.jupiter:junit-jupiter-engine:jar:5.7.2:test (version managed from 5.7.2)
+[DEBUG]             org.junit.platform:junit-platform-engine:jar:1.7.2:test (version managed from 1.7.2)
+[DEBUG]       org.mockito:mockito-core:jar:3.9.0:test (version managed from 3.9.0)
+[DEBUG]          net.bytebuddy:byte-buddy-agent:jar:1.10.22:test (version managed from 1.10.20)
+[DEBUG]          org.objenesis:objenesis:jar:3.2:test
+[DEBUG]       org.mockito:mockito-junit-jupiter:jar:3.9.0:test (version managed from 3.9.0)
+[DEBUG]       org.skyscreamer:jsonassert:jar:1.5.0:test (version managed from 1.5.0)
+[DEBUG]          com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[DEBUG]       org.springframework:spring-core:jar:5.3.7:compile (version managed from 5.3.7)
+[DEBUG]       org.springframework:spring-test:jar:5.3.7:test (version managed from 5.3.7)
+[DEBUG]       org.xmlunit:xmlunit-core:jar:2.8.2:test (version managed from 2.8.2)
+[DEBUG]    org.modelmapper:modelmapper:jar:2.4.2:compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ serviciosgenerales ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for repository.jboss.org (http://repository.jboss.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for snapshots.jboss.org (http://snapshots.jboss.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for oss.sonatype.org/jboss-snapshots (http://oss.sonatype.org/content/repositories/jboss-snapshots).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus.snapshots (http://snapshots.repository.codehaus.org).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=510800, ConflictMarker.markTime=166400, ConflictMarker.nodeCount=99, ConflictIdSorter.graphTime=187100, ConflictIdSorter.topsortTime=45100, ConflictIdSorter.conflictIdCount=35, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=895900, ConflictResolver.conflictItemCount=85, DefaultDependencyCollector.collectTime=216736000, DefaultDependencyCollector.transformTime=1897700}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.2.0
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.1.0:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.1.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.1.0:compile
+[DEBUG]          org.eclipse.aether:aether-spi:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-impl:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-api:jar:0.9.0.M2:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:0.9.0.M2:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.0.10:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.4.2:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-model:jar:3.1.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-component-annotations:jar:2.0.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.26:runtime
+[DEBUG]    org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.0.0.M2a:compile
+[DEBUG]       javax.enterprise:cdi-api:jar:1.0:compile
+[DEBUG]          javax.annotation:jsr250-api:jar:1.0:compile
+[DEBUG]          javax.inject:javax.inject:jar:1:compile
+[DEBUG]       com.google.guava:guava:jar:10.0.1:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:1.3.9:compile
+[DEBUG]       org.sonatype.sisu:sisu-guice:jar:no_aop:3.1.0:compile
+[DEBUG]          aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]       org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a:compile
+[DEBUG]          asm:asm:jar:3.3.1:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.2.0:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.3.3:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]    commons-io:commons-io:jar:2.6:compile
+[DEBUG]    org.apache.commons:commons-lang3:jar:3.8.1:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.2.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.2.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.2.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.2.0
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:0.9.0.M2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.10
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:2.0.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[DEBUG]   Included: javax.enterprise:cdi-api:jar:1.0
+[DEBUG]   Included: com.google.guava:guava:jar:10.0.1
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:1.3.9
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:no_aop:3.1.0
+[DEBUG]   Included: aopalliance:aopalliance:jar:1.0
+[DEBUG]   Included: org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a
+[DEBUG]   Included: asm:asm:jar:3.3.1
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.2.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.8.1
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.2.0, parent: java.net.URLClassLoader@475530b9]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (s) delimiters = [@]
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = C:\Users\Karen\Desktop\Fidel\servicios-generales\target\classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: edu.integrador2:serviciosgenerales:0.0.1-SNAPSHOT @ C:\Users\Karen\Desktop\Fidel\servicios-generales\pom.xml
+[DEBUG]   (f) propertiesEncoding = UTF-8
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: true, FileSet {directory: C:\Users\Karen\Desktop\Fidel\servicios-generales\src\main\resources, PatternSet [includes: {**/application*.yml, **/application*.yaml, **/application*.properties}, excludes: {}]}}, Resource {targetPath: null, filtering: false, FileSet {directory: C:\Users\Karen\Desktop\Fidel\servicios-generales\src\main\resources, PatternSet [includes: {}, excludes: {**/application*.yml, **/application*.yaml, **/application*.properties}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@704641e3
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = false
+[DEBUG] -- end configuration --
+[DEBUG] properties used {env.NUMBER_OF_PROCESSORS=8, spring-integration.version=5.5.0, flyway.version=7.7.3, env.USERPROFILE=C:\Users\Karen, java.specification.version=11, webjars-hal-browser.version=3325375, env.PROGRAMW6432=C:\Program Files, java.vendor.url=https://access.redhat.com/, env.OS=Windows_NT, sun.boot.library.path=C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64\bin, sun.java.command=org.apache.maven.wrapper.MavenWrapperMain install -X, jdk.debug=release, maven.version=3.8.1, javax-activation.version=1.2.0, kafka.version=2.7.1, jboss-transaction-spi.version=7.6.1.Final, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, env.AGSDESKTOPJAVA=C:\Program Files (x86)\ArcGIS\Desktop10.5\, env.USERDOMAIN_ROAMINGPROFILE=LAPTOP-I6NGVS5S, byte-buddy.version=1.10.22, maven-install-plugin.version=2.5.2, java.runtime.version=11.0.11+9-LTS, httpclient5.version=5.0.4, env.PUBLIC=C:\Users\Public, env.COMMONPROGRAMW6432=C:\Program Files\Common Files, java.vendor.version=18.9, env.COMPUTERNAME=LAPTOP-I6NGVS5S, micrometer.version=1.7.0, rxjava-adapter.version=1.2.1, project.baseUri=file:/C:/Users/Karen/Desktop/Fidel/servicios-generales/, hibernate.version=5.4.31.Final, java.io.tmpdir=C:\Users\Karen\AppData\Local\Temp\, java.version=11.0.11, javax-persistence.version=2.2, jakarta-ws-rs.version=2.1.6, build-helper-maven-plugin.version=3.2.0, mockito.version=3.9.0, java.vm.specification.name=Java Virtual Machine Specification, infinispan.version=12.1.3.Final, nekohtml.version=1.9.22, maven-assembly-plugin.version=3.3.0, java.library.path=C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Karen\AppData\Local\Microsoft\WindowsApps;C:\xampp\php;., jakarta-servlet.version=4.0.4, java.vendor=Red Hat, Inc., env.ERROR_CODE=0, thymeleaf-extras-java8time.version=3.0.4.RELEASE, undertow.version=2.2.7.Final, mariadb.version=2.7.3, selenium-htmlunit.version=2.49.1, thymeleaf-extras-data-attribute.version=2.0.1, ehcache3.version=3.9.3, jakarta-xml-bind.version=2.3.3, commons-dbcp2.version=2.8.0, mongodb.version=4.2.3, user.timezone=, java.vm.specification.version=11, javax-transaction.version=1.3, maven.compiler.source=11, user.home=C:\Users\Karen, env.ALLUSERSPROFILE=C:\ProgramData, postgresql.version=42.2.20, reactive-streams.version=1.0.3, jmustache.version=1.15, querydsl.version=4.4.0, appengine-sdk.version=1.9.88, thymeleaf-layout-dialect.version=2.5.3, hamcrest.version=2.2, os.version=10.0, commons-pool.version=1.6, env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, jakarta-jms.version=2.0.3, jakarta-transaction.version=1.3.3, java.vm.name=OpenJDK 64-Bit Server VM, maven-help-plugin.version=3.2.0, mimepull.version=1.9.14, json-path.version=2.5.0, jaxen.version=1.2.0, johnzon.version=1.2.11, env.USERNAME=Karen, os.arch=amd64, spring-batch.version=4.3.3, couchbase-client.version=3.1.5, derby.version=10.14.2.0, javax-jsonb.version=1.0, rxjava2.version=2.2.21, javax-jaxws.version=2.3.1, awt.toolkit=sun.awt.windows.WToolkit, env.ONEDRIVE=C:\Users\Karen\OneDrive, json-smart.version=2.4.7, javax-websocket.version=1.1, commons-codec.version=1.15, caffeine.version=2.9.1, h2.version=1.4.200, env.JAVA_HOME=C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64, env.PROGRAMFILES=C:\Program Files, java.vm.compressedOopsMode=32-bit, pooled-jms.version=1.2.2, unboundid-ldapsdk.version=4.0.14, thymeleaf-extras-springsecurity.version=3.0.4.RELEASE, javax-jaxb.version=2.3.1, sqlite-jdbc.version=3.34.0, jakarta-servlet-jsp-jstl.version=1.2.7, activemq.version=5.16.2, httpasyncclient.version=4.1.4, jtds.version=1.3.1, javax-jms.version=2.0.1, jakarta-websocket.version=1.1.2, spring-security.version=5.5.0, hibernate-validator.version=6.2.0.Final, env.DRIVERDATA=C:\Windows\System32\Drivers\DriverData, assertj.version=3.19.0, jakarta-xml-soap.version=1.4.2, env.SYSTEMDRIVE=C:, env.PROCESSOR_LEVEL=6, env.TMP=C:\Users\Karen\AppData\Local\Temp, influxdb-java.version=2.21, sun.os.patch.level=, httpcore5.version=5.1.1, lombok.version=1.18.20, maven.compiler.target=11, jakarta-xml-ws.version=2.3.3, env.WINDIR=C:\WINDOWS, commons-pool2.version=2.9.0, jackson-bom.version=2.12.3, spring-retry.version=1.3.1, maven-invoker-plugin.version=3.2.2, maven-antrun-plugin.version=1.8, maven.conf=C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1/conf, sun.java.launcher=SUN_STANDARD, user.country=PE, env.USERDOMAIN=LAPTOP-I6NGVS5S, resource.delimiter=@, javax-json.version=1.1.4, jboss-logging.version=3.4.1.Final, maven-resources-plugin.version=3.2.0, javax-validation.version=2.0.1.Final, netty.version=4.1.65.Final, jetty-jsp.version=2.2.0.v201112011158, maven-source-plugin.version=3.2.1, jetty.version=9.4.41.v20210516, rxjava.version=1.3.8, env.=C:=C:\Users\Karen\Desktop\Fidel\servicios-generales, elasticsearch.version=7.12.1, env.CONFIGSETROOT=C:\WINDOWS\ConfigSetRoot, java.runtime.name=OpenJDK Runtime Environment, rest-assured.version=4.3.3, env.COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, maven-deploy-plugin.version=2.8.2, env.MAVEN_CMD_LINE_ARGS=install -X, log4j2.version=2.14.1, maven-failsafe-plugin.version=2.22.2, spring-framework.version=5.3.7, env.ONEDRIVECONSUMER=C:\Users\Karen\OneDrive, dropwizard-metrics.version=4.1.21, git-commit-id-plugin.version=4.0.4, kotlin-coroutines.version=1.5.0, hazelcast-hibernate5.version=2.2.0, htmlunit.version=2.49.1, sun.cpu.isalist=amd64, sun.arch.data.model=64, spring-restdocs.version=2.0.5.RELEASE, freemarker.version=2.3.31, thymeleaf.version=3.0.12.RELEASE, jakarta-json.version=1.1.6, janino.version=3.1.4, maven-jar-plugin.version=3.2.0, env.WRAPPER_JAR="C:\Users\Karen\Desktop\Fidel\servicios-generales\.mvn\wrapper\maven-wrapper.jar", env.SYSTEMROOT=C:\WINDOWS, maven-compiler-plugin.version=3.8.1, java.specification.vendor=Oracle Corporation, rabbit-amqp-client.version=5.12.0, java.version.date=2021-04-20, spring-amqp.version=2.3.7, java.home=C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64, maven-war-plugin.version=3.3.1, env.LOCALAPPDATA=C:\Users\Karen\AppData\Local, user.script=, jolokia.version=1.6.2, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, jetty-reactive-httpclient.version=1.1.8, env.PATH=C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Karen\AppData\Local\Microsoft\WindowsApps;C:\xampp\php, maven-dependency-plugin.version=3.1.2, httpclient.version=4.5.13, env.EXEC_DIR=C:\Users\Karen\Desktop\Fidel\servicios-generales, jsonassert.version=1.5.0, file.encoding=Cp1252, gson.version=2.8.6, sun-mail.version=1.6.7, jakarta-annotation.version=1.3.5, env.HOMEPATH=\Users\Karen, env.GOOGLE_DEFAULT_CLIENT_ID=no, env.APPDATA=C:\Users\Karen\AppData\Roaming, mssql-jdbc.version=9.2.1.jre8, snakeyaml.version=1.28, okhttp3.version=3.14.9, liquibase.version=4.3.5, java.awt.printerjob=sun.awt.windows.WPrinterJob, httpcore.version=4.4.14, lettuce.version=6.1.2.RELEASE, env.GOOGLE_DEFAULT_CLIENT_SECRET=no, classworlds.conf=C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1\bin\m2.conf, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=windows, kotlin.version=1.5.0, wsdl4j.version=1.6.3, tomcat.version=9.0.46, sendgrid.version=4.7.2, glassfish-jaxb.version=2.3.4, spring-ws.version=3.1.1, commons-lang3.version=3.12.0, env.MAVEN_JAVA_EXE="C:\Java\java-11-openjdk-11.0.11.9-1.windows.redhat.x86_64\bin\java.exe", os.name=Windows 10, junit.version=4.13.2, env.DOWNLOAD_URL="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar", jetty-el.version=9.0.29, db2-jdbc.version=11.5.5.0, maven.build.timestamp=2021-06-08T01:02:21Z, reactor-bom.version=2020.0.7, maven-enforcer-plugin.version=3.0.0-M3, jstl.version=1.2, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, quartz.version=2.3.2, javax-money.version=1.1, spring-hateoas.version=1.3.1, env.GOOGLE_API_KEY=no, path.separator=;, jakarta-validation.version=2.0.2, maven.multiModuleProjectDirectory=C:\Users\Karen\Desktop\Fidel\servicios-generales, oracle-database.version=21.1.0.0, env.MAVEN_PROJECTBASEDIR=C:\Users\Karen\Desktop\Fidel\servicios-generales, java.vm.info=mixed mode, cassandra-driver.version=4.11.1, env.TEMP=C:\Users\Karen\AppData\Local\Temp, java.class.version=55.0, xml-maven-plugin.version=1.0.2, env.WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain, sun.jnu.encoding=Cp1252, xmlunit2.version=2.8.2, jakarta-mail.version=1.6.7, slf4j.version=1.7.30, r2dbc-bom.version=Arabba-SR10, solr.version=8.8.2, saaj-impl.version=1.5.3, nimbus-jose-jwt.version=9.8.1, maven.build.version=Apache Maven 3.8.1 (05c21c65bdfed0f71a2f2ada8b84da59348c4c5d), hikaricp.version=4.0.3, maven.home=C:\Users\Karen\.m2\wrapper\dists\apache-maven-3.8.1-bin\2l5mhf2pq2clrde7f7qp1rdt5m\apache-maven-3.8.1, netty-tcnative.version=2.0.39.Final, maven-shade-plugin.version=3.2.4, sun.stderr.encoding=cp850, jakarta-json-bind.version=1.0.2, file.separator=\, line.separator=
+, env.PROMPT=$P$G, env.PROCESSOR_REVISION=8e0a, spring-kafka.version=2.7.1, jersey.version=2.33, env.PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel, env.PROGRAMDATA=C:\ProgramData, user.name=Karen, hazelcast.version=4.1.3, jdom2.version=2.0.6, atomikos.version=4.0.6, aspectj.version=1.9.6, env.PROGRAMFILES(X86)=C:\Program Files (x86), hsqldb.version=2.5.2, ojdbc.version=19.3.0.0, env.HOMEDRIVE=C:, env.PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules, webjars-locator-core.version=0.46, project.reporting.outputEncoding=UTF-8, env.LOGONSERVER=\\LAPTOP-I6NGVS5S, oauth2-oidc-sdk.version=9.3.3, awaitility.version=4.0.3, embedded-mongo.version=3.0.0, spring-ldap.version=2.3.4.RELEASE, java.class.path=C:\Users\Karen\Desktop\Fidel\servicios-generales\.mvn\wrapper\maven-wrapper.jar, dependency-management-plugin.version=1.0.11.RELEASE, env.HOME=C:\Users\Karen, java.vm.vendor=Red Hat, Inc., env.PROCESSOR_ARCHITECTURE=AMD64, user.variant=, maven-javadoc-plugin.version=3.2.0, servlet-api.version=4.0.1, env.COMMONPROGRAMFILES=C:\Program Files\Common Files, rsocket.version=1.1.0, jakarta-persistence.version=2.2.3, artemis.version=2.17.0, groovy.version=3.0.8, javax-cache.version=1.1.1, logback.version=1.2.3, prometheus-pushgateway.version=0.10.0, env.COMSPEC=C:\WINDOWS\system32\cmd.exe, sun.cpu.endian=little, versions-maven-plugin.version=2.8.1, user.language=es, jedis.version=3.6.0, maven-clean-plugin.version=3.1.0, javax-mail.version=1.6.2, maven-surefire-plugin.version=2.22.2, javax-annotation.version=1.3.2, spring-data-bom.version=2021.0.1, mysql.version=8.0.25, classmate.version=1.5.1, jaybird.version=4.0.3.java8, antlr2.version=2.7.7, env.WDIR=C:\Users\Karen\Desktop\Fidel\servicios-generales, selenium.version=3.141.59, glassfish-el.version=3.0.3, project.build.sourceEncoding=UTF-8, jooq.version=3.14.9, java.vendor.url.bug=https://bugzilla.redhat.com/enter_bug.cgi, user.dir=C:\Users\Karen\Desktop\Fidel\servicios-generales, ehcache.version=2.10.9.2, junit-jupiter.version=5.7.2, java.vm.version=11.0.11+9-LTS, neo4j-java-driver.version=4.2.5, jakarta-activation.version=1.2.2, spring-session-bom.version=2021.0.0}
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory C:\Users\Karen\Desktop\Fidel\servicios-generales\src\main\resources
+excludes []
+includes [**/application*.yml, **/application*.yaml, **/application*.properties]
+[DEBUG] ignoreDelta true
+[INFO] Copying 1 resource
+[DEBUG] Copying file application.properties
+[DEBUG] file application.properties has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'application.properties'.
+[DEBUG] filtering C:\Users\Karen\Desktop\Fidel\servicios-generales\src\main\resources\application.properties to C:\Users\Karen\Desktop\Fidel\servicios-generales\target\classes\application.properties
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.577 s
+[INFO] Finished at: 2021-06-07T20:02:21-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources (default-resources) on project serviciosgenerales: Execution default-resources of goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources failed: newPosition < 0: (-1 < 0) -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources (default-resources) on project serviciosgenerales: Execution default-resources of goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources failed: newPosition < 0: (-1 < 0)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.apache.maven.wrapper.BootstrapMainStarter.start (BootstrapMainStarter.java:39)
+    at org.apache.maven.wrapper.WrapperExecutor.execute (WrapperExecutor.java:122)
+    at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:61)
+Caused by: org.apache.maven.plugin.PluginExecutionException: Execution default-resources of goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources failed: newPosition < 0: (-1 < 0)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:148)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.apache.maven.wrapper.BootstrapMainStarter.start (BootstrapMainStarter.java:39)
+    at org.apache.maven.wrapper.WrapperExecutor.execute (WrapperExecutor.java:122)
+    at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:61)
+Caused by: java.lang.IllegalArgumentException: newPosition < 0: (-1 < 0)
+    at java.nio.Buffer.createPositionException (Buffer.java:318)
+    at java.nio.Buffer.position (Buffer.java:293)
+    at java.nio.ByteBuffer.position (ByteBuffer.java:1094)
+    at java.nio.ByteBuffer.position (ByteBuffer.java:262)
+    at org.apache.maven.shared.utils.io.FileUtils.copyFile (FileUtils.java:1946)
+    at org.apache.maven.shared.filtering.DefaultMavenFileFilter.copyFile (DefaultMavenFileFilter.java:98)
+    at org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering.filterResources (DefaultMavenResourcesFiltering.java:262)
+    at org.apache.maven.plugins.resources.ResourcesMojo.execute (ResourcesMojo.java:356)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.apache.maven.wrapper.BootstrapMainStarter.start (BootstrapMainStarter.java:39)
+    at org.apache.maven.wrapper.WrapperExecutor.execute (WrapperExecutor.java:122)
+    at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:61)
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
