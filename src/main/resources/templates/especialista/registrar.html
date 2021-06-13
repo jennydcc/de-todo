@@ -101,13 +101,22 @@
         </div>
       </div>
       <div>
-        <div class="mt-3">
-          <input type="submit" value="REGISTRARSE" class="btn app-btn app-bg-primary text-white" />
-        </div>
-        <p th:text="${mensaje}" />
-      </div>
+        <div class="mt-3"> 
+          <table>
+          <tr>
+           <td>
+           <input type="submit" value="CONTINUAR" class="btn app-btn app-bg-primary text-white" />
+            </div>
+           </td>
+            <td>
+   <!--            <a href="/especialista/registrarservicio" class="btn app-btn app-bg-primary text-white">CONTINUAR</a>  -->
+            </td>
 
-      <a href="/especialista/registrarservicio" class="btn app-btn app-bg-primary text-white">CONTINUAR</a>
+            </tr>
+
+          </table>
+          <p th:text="${mensaje}" />
+        </div>
     </form>
   </div>
 </div>

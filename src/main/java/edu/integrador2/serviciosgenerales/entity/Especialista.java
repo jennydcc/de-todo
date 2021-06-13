@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,5 +32,9 @@ public class Especialista extends Usuario {
   private String sexo;
   private String tipoDocumento;
   private String numeroDocumento;
+  private String actividad;
+  private String descripcionActividad;
+  private String videoActividad;
+  private String precio;
   private Boolean aceptaAcuerdo;
 }
