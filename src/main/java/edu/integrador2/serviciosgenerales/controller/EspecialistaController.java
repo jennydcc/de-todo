@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
+import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 
 @Controller
 public class EspecialistaController {
@@ -18,6 +19,11 @@ public class EspecialistaController {
   ClienteService clienteService;
   @Autowired
   EspecialistaService entityService;
+  @Autowired
+  EspecialidadService especialidadService;
+  @Autowired
+  EspecialistaService especialistaService;
+
 
   @GetMapping("/especialista/")
   public String homePage(Model uiModel) {
@@ -41,7 +47,7 @@ public class EspecialistaController {
   public String registrarEspecialista(Especialista model, Model uiModel) {
     entityService.registrar(model);
     Template.addGlobalAttributes(uiModel);
-    return "redirect:/especialista/login";
+    return "redirect:/especialista/registrarservicio";
   }
 
   @GetMapping("/especialista/servicios-requeridos")
@@ -53,6 +59,8 @@ public class EspecialistaController {
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
+    uiModel.addAttribute("especialidades", especialidadService.listar());
+    uiModel.addAttribute("especialistas", especialistaService.listar());
     Template.addPageIndex(uiModel, 1);
     return "especialista/registrarservicio";
   }
