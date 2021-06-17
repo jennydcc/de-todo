@@ -19,3 +19,9 @@ INSERT INTO `detodo`.`especialista`
 INSERT INTO `detodo`.`administrador`
 (`id_administrador`, `nombre`, `tipo_usuario`, `correo`, `contrasena`, `bloqueado`, `habilitado`) VALUES 
 ('1', 'Adan', 'ADMINISTRADOR', 'adan@mail.com', '$2a$10$8o2IG0RXudGPkv.LXzlE8uY5YgIXP4qi0Lpe1MLjOJkJ0rLoPPApa', b'0', b'1');
+
+-- Distritos
+INSERT INTO `detodo`.`especialidad` (`id_especialidad`, `nombre`) VALUES ('1', 'Lima');
+INSERT INTO `detodo`.`especialidad` (`id_especialidad`, `nombre`) VALUES ('2', 'Los Olivos');
+INSERT INTO `detodo`.`especialidad` (`id_especialidad`, `nombre`) VALUES ('3', 'La Molina');
+INSERT INTO `detodo`.`especialidad` (`id_especialidad`, `nombre`) VALUES ('4', 'San Miguel');

@@ -11,58 +11,40 @@
       <div class="row">
         <div class="col-12 col-lg-5">
             <div class="mb-3 row">
-                <label for="actividad" class="col-sm-3 col-form-label">Seleccione Actividad</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-select-sm" name="actividad" required>
-                    <option value="1">Gasfiteria</option>
-                    <option value="2">Electricidad</option>
-                    <option value="3">Carpinteria</option>
-                    <option value="3">Informatica</option>
-                   
-                  </select>
-                </div>
+                <label for="direccion" class="col-sm-3 col-form-label">Seleccione Actividad</label>
+                  <div class="col-sm-9">
+                    <select class="form-select form-select-sm" name="idEspecialidad" required>
+                      <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+                    </select>
               </div> 
               
            <div class="mb-3 row">
-            <label for="descripcionActividad" class="col-sm-3 col-form-label">Descripcion de la actividad</label>
+            <label for="descripcionActividad" class="col-sm-3 col-form-label">Descripción de la actividad</label>
             <div class="col-sm-9">
-              <input type="text" id="descripcionActividad" name="descripcionActividad" class="form-control" required>
+              <textarea id="descripcionActividad" name="descripcionActividad" class="form-control" rows=5 cols=25 required></textarea>
             </div>
           </div>    
           <div class="mb-3 row">
-            <label for="videoActividad" class="col-sm-3 col-form-label">Video Referencial de la Actividad</label>
+            <label for="videoActividad" class="col-sm-3 col-form-label">Video/Foto Referencial de la Actividad</label>
             <div class="col-sm-9">
-              <input type="text" id="videoActividad" name="videoActividad" class="form-control" required>
+              <input type="file" id="videoActividad" name="videoActividad" class="custom-file-input" aria-describedby="fileHelp"  required>
             </div>
           </div> 
           <div class="mb-3 row">
             <label for="precio" class="col-sm-3 col-form-label">Precio Referencial por visita</label>
             <div class="col-sm-9">
-              <input type="email" id="correo" name="precio" class="form-control" autocomplete="off" required>
+              <input type="text" id="precio" name="precio" class="form-control" autocomplete="off" required>
             </div>
           </div>
            
         </div>
       </div>
-      <div class="form-check">
-        <input name="aceptaAcuerdo" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" required>
-        <label class="form-check-label" for="flexCheckChecked">
-          Aceptar los términos del contrato
-        </label>
-      </div>
       <div class="mt-3">
-        <input type="submit" value="REGISTRARSE" class="btn app-btn app-bg-primary text-white" />
+        <input type="buttom" value="REGISTRARSE" class="btn app-btn app-bg-primary text-white" />
       </div>
       <p th:text="${mensaje}" />
     </div>
-    <div class="col-12 col-lg-5">
-      <div class="mt-3">
-        <a href="/especialista/registrar" class="btn app-btn app-bg-primary text-white">REGRESAR</a>
-      </div>
-        <p th:text="${mensaje}" />
-      </div>
-    
-    </form>
+      </form>
   </div>
 
 <th:block th:replace="footer"></th:block>

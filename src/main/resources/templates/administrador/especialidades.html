@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<th:block th:replace="header"></th:block>
+<th:block th:replace="administrador/_header"></th:block>
+
+
+<div class="container mt-6">
+  <!-- Dynamic block template -->
+  <div id="dynamicBlock">
+    <h1>Especialidades</h1>
+    <button @click="handleNewRecordClick()" type="button" class="btn btn-primary">NUEVA ESPECIALIDAD</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="rec in records">
+          <td>{{rec.id}}</td>
+          <td>{{rec.nombre}}</td>
+          <td>
+            <i @click="handleDeleteRecordClick(rec)" class="bi bi-x-square-fill" style="font-size: 24px;"></i>
+            <i @click="handleEditRecordClick(rec)" class="bi bi-pencil-square" style="font-size: 24px;"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Bootstrap Modals -->
+    <!-- Editor -->
+    <div class="modal fade" id="editorModal" tabindex="-1" aria-labelledby="editorModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editorModalLabel">Editar especialidad</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="editor_nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="editor_nombre" v-model="editingRecord.nombre">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+            <button @click="handleSaveRecordClick(editingRecord)" type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Eliminar dialog -->
+    <div class="modal fade" id="deleteDialog" tabindex="-1" aria-labelledby="deleteDialogLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteDialogLabel">Eliminar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Seguro que desea eliminar la especialidad:<br>
+            <b>{{deletingRecord.nombre}}</b>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+            <button @click="handleConfirmDeleteRecordClick(deletingRecord)" type="button"
+              class="btn btn-primary">ELIMINAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<th:block th:replace="footer"></th:block>
+<!-- Dynamic view javascript -->
+<script src="/js/administrador/view-especialidades.js"></script>
+</body>
+
+</html>

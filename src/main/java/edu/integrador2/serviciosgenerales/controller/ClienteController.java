@@ -22,13 +22,13 @@ public class ClienteController {
   private ModelMapper modelMapper;
   @Autowired
   ClienteService entityService;
-
   @Autowired
   EspecialidadService especialidadService;
   @Autowired
   ServicioService servicioService;
   @Autowired
   EspecialistaService especialistaService;
+
 
   @GetMapping("/cliente/")
   public String homePage(Model uiModel) {
@@ -62,13 +62,12 @@ public class ClienteController {
     uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
     return "cliente/servicios-solicitados";
   }
+
+
+
 /**
  * Modificar datos del cliente 
  * */
-
-
-
-
 
 
   /**
@@ -79,10 +78,11 @@ public class ClienteController {
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 1);
-    uiModel.addAttribute("especialidades", especialidadService.listar());
+    uiModel.addAttribute("especialidad", especialidadService.listarEspecialidad());
     uiModel.addAttribute("especialistas", especialistaService.listar());
     return "cliente/solicitar-servicio";
   }
+
 
   @PostMapping(path = "/cliente/solicitar-servicio", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String registrarEspecialista(ServicioDto dto, Model uiModel) {
@@ -98,4 +98,15 @@ public class ClienteController {
     Template.addPageIndex(uiModel, 2);
     return "cliente/reportes";
   }
+
+  @GetMapping("/cliente/modificar")
+  public String modificarclientes(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 3);
+    return "cliente/modificar";
+  }
+  
+
+
+
 }
