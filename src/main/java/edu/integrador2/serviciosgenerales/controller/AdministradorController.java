@@ -19,22 +19,27 @@ public class AdministradorController {
     return "administrador/login";
   }
 
-  /*vista reportes, mantenimiento-controller */
+  /* vista reportes, mantenimiento-controller */
 
   @GetMapping("/administrador/reportes")
   public String reportesadmin(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 2);
+    Template.addPageIndex(uiModel, 1);
     return "administrador/reportes";
+  }
+
+  @GetMapping("/administrador/especialidades")
+  public String especialidades(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 2);
+    return "administrador/especialidades";
   }
 
   @GetMapping("/administrador/inicio")
   public String mantadmin(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 1);
+    Template.addPageIndex(uiModel, 0);
     return "administrador/inicio";
   }
 
-
 }
-
