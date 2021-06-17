@@ -4,16 +4,26 @@
       return fetch(url).then((res) => res.json());
     }
     static post(url, data) {
-      return API._fetch(url, 'POST', data);
+      return ApiRest._fetch(url, 'POST', data);
     }
     static put(url, data) {
-      return API._fetch(url, 'PUT', data);
+      return ApiRest._fetch(url, 'PUT', data);
     }
     static delete(url) {
-      return API._fetch(url, 'DELETE');
+      return ApiRest._fetch(url, 'DELETE');
     }
     static createService(url) {
       return new ApiRestService(url);
+    }
+    // Opciones globales para todas las peticiones
+    static _fetch(url, method, data = null) {
+      return fetch(url, {
+        method,
+        body: data ? JSON.stringify(data) : undefined,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      }).then((res) => res.json());
     }
   };
   class ApiRestService {
@@ -40,17 +50,6 @@
       return ApiRest.delete(`${this.apiUrl}/${id}`);
     }
   };
-  // Opciones globales para todas las peticiones
-  API._fetch = function (url, method, data = null) {
-    return fetch(url, {
-      method,
-      body: data ? JSON.stringify(data) : undefined,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    }).then((res) => res.json());
-  };
-
   ns.ApiRest = ApiRest;
 
 })(window)

@@ -1,4 +1,5 @@
 const View = {
+  // Propiedades de la plantilla
   data() {
     return {
       editingRecord: {},
@@ -7,10 +8,15 @@ const View = {
     }
   },
   mounted() {
+    // Crea servicio para hacer peticiones REST
     this.defaultService = ApiRest.createService('/api/v1/especialidades');
     this.loadData();
   },
+  // Metodos
   methods: {
+    cambiarMiNombre() {
+      this.miNombre = this.miNombre + 'X';
+    },
     /**
      * Cargar datos del servicio
      */

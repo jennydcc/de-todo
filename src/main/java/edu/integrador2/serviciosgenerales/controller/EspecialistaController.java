@@ -24,7 +24,6 @@ public class EspecialistaController {
   @Autowired
   EspecialistaService especialistaService;
 
-
   @GetMapping("/especialista/")
   public String homePage(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
@@ -56,10 +55,11 @@ public class EspecialistaController {
     Template.addPageIndex(uiModel, 0);
     return "especialista/servicios-requeridos";
   }
+
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
-    uiModel.addAttribute("especialidades", especialidadService.listar;
+    uiModel.addAttribute("especialidades", especialidadService.list());
     uiModel.addAttribute("especialistas", especialistaService.listar());
     Template.addPageIndex(uiModel, 1);
     return "especialista/registrarservicio";
@@ -72,11 +72,11 @@ public class EspecialistaController {
     return "especialista/comentarios";
   }
 
-    @GetMapping("/especialista/modificar")
+  @GetMapping("/especialista/modificar")
   public String modificarespecialista(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 3);
     return "especialista/modificar";
   }
-  
+
 }

@@ -29,7 +29,6 @@ public class ClienteController {
   @Autowired
   EspecialistaService especialistaService;
 
-
   @GetMapping("/cliente/")
   public String homePage(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
@@ -63,12 +62,9 @@ public class ClienteController {
     return "cliente/servicios-solicitados";
   }
 
-
-
-/**
- * Modificar datos del cliente 
- * */
-
+  /**
+   * Modificar datos del cliente
+   */
 
   /**
    * Soliicitar servicio
@@ -78,11 +74,10 @@ public class ClienteController {
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 1);
-    uiModel.addAttribute("especialidad", especialidadService.listarEspecialidad());
+    uiModel.addAttribute("especialidad", especialidadService.list());
     uiModel.addAttribute("especialistas", especialistaService.listar());
     return "cliente/solicitar-servicio";
   }
-
 
   @PostMapping(path = "/cliente/solicitar-servicio", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String registrarEspecialista(ServicioDto dto, Model uiModel) {
@@ -105,8 +100,5 @@ public class ClienteController {
     Template.addPageIndex(uiModel, 3);
     return "cliente/modificar";
   }
-  
-
-
 
 }

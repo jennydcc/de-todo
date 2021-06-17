@@ -18,7 +18,7 @@ public class EspecialidadService {
   /**
    * @deprecated Usar list
    */
-  public ArrayList<Especialidad> listarEspecialidad() {
+  public ArrayList<Especialidad> listar() {
     return (ArrayList<Especialidad>) entityRepository.findAll();
   }
 
