@@ -50,6 +50,7 @@
             </div>
             <div class="m-1">
               <span th:text="${usuario.nombre}"></span>
+              <span th:text="${usuario.correo}"></span>
               <form th:if="${usuario}" name="logoutForm" th:action="@{/logout}" method="post"
                 style="display: inline-block;">
                 <input type="submit" value="Cerrar Sesión" class="app-btn-logout" />

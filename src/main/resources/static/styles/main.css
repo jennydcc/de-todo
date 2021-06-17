@@ -102,3 +102,14 @@ hr.bar {
   background-color: blue;
 }
 /*fin de estilo reporte*/
+@media print{
+  h3.titreporte {
+    text-align: center;
+    margin: 10px;
+    color:red;
+  }
+
+  .no-print{
+    display:none;
+  }
+}

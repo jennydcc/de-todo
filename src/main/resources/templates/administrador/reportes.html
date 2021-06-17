@@ -8,9 +8,11 @@
 
 <div class="container mt-6">
   <div class="row">
+    <div class="container pt-2 pb-4 d-flex justify-content-end">
+    </div>
       <div class="col-sm-6">
-        <p>Fecha de impresión:</p>
-        <p>Hora de impresión:</p>
+      <div>Fecha de Impresión: <span th:text="${#calendars.format(hoy,'EEEE dd ''de''   MMMM ''de'' yyyy')}"></span></div>
+      <div>Hora de Impresión <span th:text="${#calendars.format(hoy,'HH:mm')}"></span></div>
       </div>
       <div class="col-sm-6">
        <p>
@@ -23,7 +25,7 @@
 
  </div>
  <div class="col-sm-2">
-   <a href="#" class="btn app-bg-darken-primary text-white">Imprimir  <i class="bi bi-printer-fill"></i></a>
+   <a href="#" onclick="print()" class="btn app-bg-darken-primary text-white no-print">Imprimir  <i class="bi bi-printer-fill"></i></a>
  </div>
         </div>
 

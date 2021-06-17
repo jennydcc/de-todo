@@ -19,10 +19,14 @@ public class ClienteService implements UserDetailsService {
   @Autowired
   BCryptPasswordEncoder bCryptPasswordEncoder;
   @Autowired
-  ClienteRepository repository;
+  ClienteRepository entityrepository;
 
   public ArrayList<Cliente> listarClientes() {
-    return (ArrayList<Cliente>) repository.findAll();
+    return (ArrayList<Cliente>) entityrepository.findAll();
+  }
+
+  public void eliminar(Long id) {
+    entityrepository.deleteById(id);
   }
 
   public Cliente registrar(Cliente model) {
@@ -30,17 +34,17 @@ public class ClienteService implements UserDetailsService {
     final String encryptedPassword = bCryptPasswordEncoder.encode(model.getPassword());
     model.setContrasena(encryptedPassword);
 
-    return repository.save(model);
+    return entityrepository.save(model);
   }
 
   public Cliente guardarCliente(Cliente cliente) {
-    return repository.save(cliente);
+    return entityrepository.save(cliente);
   }
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-    final Optional<Cliente> optionalUser = repository.findByCorreo(email);
+    final Optional<Cliente> optionalUser = entityrepository.findByCorreo(email);
 
     if (optionalUser.isPresent()) {
       return optionalUser.get();

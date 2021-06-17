@@ -7,7 +7,7 @@
 
 
 <div class="container mt-6">
-  <h1>Usuarios Clientes</h1>
+  <h1>Usuarios Administradores</h1>
   <form role="form" th:action="@{/cliente/solicitar-servicio}" th:method="post" class="mt-4">
     <input type="hidden" name="idCliente" th:attr="value=${usuario.id}">
     
@@ -30,8 +30,9 @@
                 <td th:text="${item.correo}"></td>
                 <td th:text="${item.habilitado}"></td>
                 <td><a th:href="@{/cliente/cancelar-cliente/{id}(id=${item.id})}"><i class="bi bi-x-square-fill" style="font-size: 24px;"></i></a></td>                
-              <td><a th:href="@{/cliente/cancelar-cliente/{id}(id=${item.id})}"><i class="bi bi-pencil-fill" style="font-size: 24px;"></i></a>
-</td>
+                  <td><a href="#"><i class="bi bi-x-square-fill" style="font-size: 24px;"></i></a>
+                      <a href="#"><i class="bi bi-file-lock-fill" style="font-size: 24px;"></i></a>
+                </td>
               </tr>
           </tbody>
 </table>

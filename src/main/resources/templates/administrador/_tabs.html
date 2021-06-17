@@ -1,8 +1,15 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a th:attr="class=${pageIndex==0 ? 'nav-link active' : 'nav-link'}" href="/administrador/inicio">Mantenimiento</a>
+    <a th:attr="class=${pageIndex==0 ? 'nav-link active' : 'nav-link'}" href="/administrador/inicio">Cliente</a>
+  </li>
+   <li class="nav-item">
+    <a th:attr="class=${pageIndex==1 ? 'nav-link active' : 'nav-link'}" href="/administrador/mantenimiento-especialista">Especialista</a>
   </li>
   <li class="nav-item">
-    <a th:attr="class=${pageIndex==1 ? 'nav-link active' : 'nav-link'}" href="/administrador/reportes">Reportes</a>
+    <a th:attr="class=${pageIndex==2 ? 'nav-link active' : 'nav-link'}" href="/administrador/mantenimiento-administrador">Administrador</a>
   </li>
+  <li class="nav-item">
+    <a th:attr="class=${pageIndex==3 ? 'nav-link active' : 'nav-link'}" href="/administrador/reportes">Reportes</a>
+  </li>
+  
  </ul>
