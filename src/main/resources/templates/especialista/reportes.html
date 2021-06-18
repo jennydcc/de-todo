@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="header"></th:block>
+<th:block th:replace="especialista/_header"></th:block>
+
+<div class="container">
+
+ <div class="row">
+
+    <div class="col-md-2">
+        <label for="fecha" >Criterio de Busqueda</label>
+    </div>
+    <div class="col-md-2">
+        <select class="form-select form-select-sm" name="distrito" required>
+          <option value="1">San Isidro</option>
+          <option value="2">Magdalena del Mar</option>
+          <option value="3">Pueblo Libre</option>
+          <option value="3">Lince</option>
+          <option value="3">San Borja</option>
+        </select>
+      </div>
+
+    <div class="col-md-2">
+        <label for="fecha" >Fecha de Inicio</label>
+    </div>
+        <div class="col-md-2">
+          <input type="date" id="fecha" name="fecha" class="form-control" required />
+        </div>
+        <div class="col-md-2">
+            <label for="fecha" >Fecha de Fin</label>
+        </div>
+            <div class="col-md-2">
+              <input type="date" id="fecha" name="fecha" class="form-control" required />
+            </div>
+    
+    <div class="row">
+        <div class="col-md-2">
+            <label for="fecha" >Distrito</label>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" name="distrito" required>
+              <option value="1">San Isidro</option>
+              <option value="2">Magdalena del Mar</option>
+              <option value="3">Pueblo Libre</option>
+              <option value="3">Lince</option>
+              <option value="3">San Borja</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="fecha" >Calificacion</label>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" name="distrito" required>
+              <option value="1">Alta</option>
+              <option value="2">Baja</option>
+              <option value="3">Media</option>
+              
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="fecha" >Estado</label>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" name="distrito" required>
+              <option value="1">Finalizo</option>
+              <option value="2">Pendiente</option>
+              <option value="3">Rechazado</option>
+              
+            </select>
+          </div>
+
+    </div>
+
+
+
+    
+ </div>
+      
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<th:block th:replace="footer"></th:block>
+
+
+</html>

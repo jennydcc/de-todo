@@ -79,4 +79,11 @@ public class EspecialistaController {
     return "especialista/modificar";
   }
 
+  @GetMapping("/especialista/reportes")
+  public String reporteespecialista(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 4);
+    return "especialista/reportes";
+  }
+
 }
