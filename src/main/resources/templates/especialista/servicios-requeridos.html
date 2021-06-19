@@ -9,30 +9,29 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">CLIENTE</th>
+      <th scope="col">DESCRIPCIÓN DEL SERVICIO</th>
+      <th scope="col">TELÉFONO</th>
+      <th scope="col">DIRECCIÓN</th>
+      <th scope="col">DISTRITO</th>
+      <th scope="col">ESTADO</th>
+      <th scope="col">ACCIONES</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td scope="row">
+          <option th:each="item: ${servicios}" th:text="${item.id_cliente}" th:attr="value=${item.id}"></option>
+
+      </td>
+      <td>mantenimiento gasfiteria</td>
+      <td>999454345</td>
+      <td>av c </td>
+      <td>lima</td>
+      <td>pendiente</td>
+      <td><input type="button" value="Atender">  <input type="button" value="Reporte"> </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
 </table>
 

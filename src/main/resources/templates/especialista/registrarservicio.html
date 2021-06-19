@@ -4,20 +4,28 @@
 
 <th:block th:replace="header"></th:block>
 <div class="container">
-  <div class="row">
+  <div class="row"> 
     <h3>Registro de Especialistas</h3>
     <h5>Registro de Actividades</h5>
-    <form role="form" th:action="@{/especialista/registrar}" th:method="post" class="mt-2">
+    <form role="form" th:action="@{/especialista/registrarservicio}" th:method="post" enctype="multipart/form-​data" class="mt-2">
+
+      <input type="hidden" id="txtId" name="idespecialista" value="" >
+      <script language="javascript">
+        var queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        console.log(urlParams.get('id'))
+        document.getElementById('txtId').value = urlParams.get('id');
+      </script>
       <div class="row">
         <div class="col-12 col-lg-5">
             <div class="mb-3 row">
-                <label for="direccion" class="col-sm-3 col-form-label">Seleccione Actividad</label>
-                  <div class="col-sm-9">
-                    <select class="form-select form-select-sm" name="idEspecialidad" required>
-                      <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
-                    </select>
+              <label for="direccion" class="col-sm-3 col-form-label">Seleccione Actividad</label>
+              <div class="col-sm-9">
+                <select class="form-select form-select-sm" name="idEspecialidad" required>
+                  <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+                </select>
               </div> 
-              
+            </div>  
            <div class="mb-3 row">
             <label for="descripcionActividad" class="col-sm-3 col-form-label">Descripción de la actividad</label>
             <div class="col-sm-9">
@@ -33,19 +41,26 @@
           <div class="mb-3 row">
             <label for="precio" class="col-sm-3 col-form-label">Precio Referencial por visita</label>
             <div class="col-sm-9">
-              <input type="text" id="precio" name="precio" class="form-control" autocomplete="off" required>
+              <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');" id="precio" name="precio" class="form-control" autocomplete="off"  placeholder="S/. 0.00" required>
             </div>
           </div>
            
         </div>
       </div>
       <div class="mt-3">
-        <input type="buttom" value="REGISTRARSE" class="btn app-btn app-bg-primary text-white" />
+        <input type="submit" value="REGISTRARSE" class="btn app-btn app-bg-primary text-white" />
       </div>
       <p th:text="${mensaje}" />
     </div>
       </form>
   </div>
+
+  <form role="form" th:action="@{/especialista/prueba}" th:method="post" enctype="multipart/form-data">
+
+    <input type="file" name="file">
+
+    <input type="submit" value="prueba" class="btn app-btn app-bg-primary text-white" />
+  </form>
 
 <th:block th:replace="footer"></th:block>
 
