@@ -9,14 +9,14 @@
 <div class="container mt-6">
   <!-- Dynamic block template -->
   <div id="dynamicBlock">
-    <h1>Especialidades</h1>
-    <button @click="handleNewRecordClick()" type="button" class="btn btn-primary">NUEVA ESPECIALIDAD</button>
+    <h1>Administradores</h1>
+    <button @click="handleNewRecordClick()" type="button" class="btn btn-primary">Nuevo Administrador</button>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">NOMBRE</th>
           <th scope="col">CORREO</th>
+          <th scope="col">TIPO</th>
           <th scope="col">HABILITADO</th>
           <th scope="col">ACCIONES</th>
         </tr>
@@ -24,8 +24,8 @@
       <tbody>
         <tr v-for="rec in records">
           <td>{{rec.id}}</td>
-          <td>{{rec.nombre}}</td>
           <td>{{rec.correo}}</td>
+          <td>{{rec.tipoUsuario}}</td>
           <td>{{rec.habilitado}}</td>
           <td>
             <i @click="handleDeleteRecordClick(rec)" class="bi bi-x-square-fill" style="font-size: 24px;"></i>
@@ -40,21 +40,21 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editorModalLabel">Editar cliente</h5>
+            <h5 class="modal-title" id="editorModalLabel">Editar especialidad</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="editor_nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="editor_nombres" v-model="editingRecord.nombre">
+              <label for="editor_nombre" class="form-label">Correo</label>
+              <input type="text" class="form-control" id="editor_nombre" v-model="editingRecord.correo">
             </div>
             <div class="mb-3">
-              <label for="correo" class="form-label">Correo</label>
-              <input type="text" class="form-control" id="correo" v-model="editingRecord.correo">
+              <label for="editor_nombre" class="form-label">Tipo Usuario</label>
+              <input type="text" class="form-control" id="editor_nombre" v-model="editingRecord.tipoUsuario" disabled>
             </div>
             <div class="mb-3">
-              <label for="editor_habilitado" class="form-label">Habilitado</label>
-              <input type="text" class="form-control" id="editor_habilitado" v-model="editingRecord.habilitado">
+              <label for="editor_nombre" class="form-label">Contraseña</label>
+              <input type="text" class="form-control" id="editor_nombre" v-model="editingRecord.contrasena">
             </div>
           </div>
           <div class="modal-footer">
@@ -89,7 +89,7 @@
 
 <th:block th:replace="footer"></th:block>
 <!-- Dynamic view javascript -->
-<script src="/js/administrador/view-clientes.js"></script>
+<script src="/js/administrador/view-administradores.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 package edu.integrador2.serviciosgenerales.api.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,28 +24,29 @@ public class EspecialistaRestController {
   EspecialistaService especialistaService;
 
   @GetMapping()
-  public ArrayList<Especialista> listar() {
-    return especialistaService.listar();
+  public List<Especialista> list() {
+    return especialistaService.list();
   }
 
   @GetMapping(value = "/{id}")
-  public Optional<Especialista> obtener(@PathVariable Long id) {
-    return especialistaService.obterner(id);
+  public Optional<Especialista> get(@PathVariable Long id) {
+    return especialistaService.get(id);
   }
 
   @PostMapping()
-  public Especialista guardar(@RequestBody Especialista model) {
-    return especialistaService.registrar(model);
+  public Especialista create(@RequestBody Especialista model) {
+    return especialistaService.create(model);
   }
 
   @PutMapping(value = "/{id}")
-  public Especialista actualizar(@PathVariable Long id, @RequestBody Especialista model) {
-    return especialistaService.actualizar(id, model);
+  public Especialista update(@PathVariable Long id, @RequestBody Especialista model) {
+    return especialistaService.update(id, model);
   }
 
   @DeleteMapping(value = "/{id}")
   public boolean eliminar(@PathVariable Long id) {
-    especialistaService.eliminar(id);
+    especialistaService.delete(id);
     return true;
   }
+
 }
