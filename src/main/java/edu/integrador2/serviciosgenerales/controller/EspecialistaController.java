@@ -14,10 +14,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.integrador2.serviciosgenerales.dto.ActividadDto;
 import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
+import edu.integrador2.serviciosgenerales.entity.Actividad;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
+import edu.integrador2.serviciosgenerales.service.ActividadService;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.DistritoService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
+import edu.integrador2.serviciosgenerales.service.ServicioService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 
 @Controller
@@ -35,12 +38,17 @@ public class EspecialistaController {
   EspecialistaService especialistaService;
   @Autowired
   DistritoService distritoService;
+  @Autowired
+  ActividadService actividadService;
+  @Autowired
+  ServicioService servicioService;
 
 
+ 
   @GetMapping("/especialista/")
-  public String homePage(Model uiModel) {
-    Template.addGlobalAttributes(uiModel);
-    return "especialista/servicios-requeridos";
+  public String serviciosrequeridos(Model uiModel) throws Exception {
+    // Template.addGlobalAttributes(uiModel);
+    return solicitarServicio(uiModel);
   }
 
   @GetMapping("/especialista/login")
@@ -65,17 +73,18 @@ public class EspecialistaController {
   }
 
   @PostMapping(path = "/especialista/registrarservicio")
-  public String registrarServicio( ActividadDto model,  Model uiModel) throws IOException {
-    
+  public String registrarServicio( ActividadDto dto,  Model uiModel) throws IOException {
+    Actividad entity = modelMapper.map (dto, Actividad.class);
+    actividadService.registrar(entity);
+    Template.addGlobalAttributes(uiModel);
+
     /* System.out.println(model);
     System.out.println(model.getIdespecialista());
     System.out.println(model.getIdEspecialidad());
     System.out.println(model.getVideoActividad());*/
-    System.out.println(model.getVideoActividad().getBytes());
+    //System.out.println(model.getVideoActividad().getBytes());
     //System.out.println(model.getPrecio());
-
-    Template.addGlobalAttributes(uiModel);
-    return "redirect:/especialista/registrarservicio?id=3";
+    return "redirect:/especialista/login";
   }
 
   @PostMapping(path = "/especialista/prueba") 
@@ -94,6 +103,7 @@ public class EspecialistaController {
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
     return "especialista/servicios-requeridos";
   }
 

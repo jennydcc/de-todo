@@ -33,9 +33,9 @@
             </div>
           </div>    
           <div class="mb-3 row">
-            <label for="videoActividad" class="col-sm-3 col-form-label">Video/Foto Referencial de la Actividad</label>
+            <label for="videoActividad" class="col-sm-3 col-form-label">Foto Referencial de la Actividad</label>
             <div class="col-sm-9">
-              <input type="file" id="videoActividad" name="videoActividad" class="custom-file-input" aria-describedby="fileHelp"  required>
+              <input type="file" id="videoActividad" name="videoActividad" class="custom-file-input" aria-describedby="fileHelp" accept="image/*" required>
             </div>
           </div> 
           <div class="mb-3 row">
@@ -54,15 +54,6 @@
     </div>
       </form>
   </div>
-
-  <form role="form" th:action="@{/especialista/prueba}" th:method="post" enctype="multipart/form-data">
-
-    <input type="file" name="file">
-
-    <input type="submit" value="prueba" class="btn app-btn app-bg-primary text-white" />
-  </form>
-
-<th:block th:replace="footer"></th:block>
 
 </html>
         
