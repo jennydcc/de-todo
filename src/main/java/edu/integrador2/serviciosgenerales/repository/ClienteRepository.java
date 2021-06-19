@@ -9,5 +9,5 @@ import edu.integrador2.serviciosgenerales.entity.Cliente;
 
 @Repository
 public interface ClienteRepository extends CrudRepository<Cliente, Long> {
- Optional<Cliente> findByCorreo(String correo);
+  Optional<Cliente> findByCorreoIgnoreCase(String correo);
 }

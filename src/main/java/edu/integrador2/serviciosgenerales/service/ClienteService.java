@@ -20,52 +20,77 @@ public class ClienteService implements UserDetailsService {
   @Autowired
   BCryptPasswordEncoder bCryptPasswordEncoder;
   @Autowired
-  ClienteRepository entityrepository;
+  ClienteRepository defaultRepository;
 
   public ArrayList<Cliente> listarClientes() {
-    return (ArrayList<Cliente>) entityrepository.findAll();
+    return (ArrayList<Cliente>) defaultRepository.findAll();
   }
 
   public List<Cliente> list() {
-    return (List<Cliente>) entityrepository.findAll();
+    return (List<Cliente>) defaultRepository.findAll();
   }
 
   public Optional<Cliente> get(Long id) {
-    return (Optional<Cliente>) entityrepository.findById(id);
+    return (Optional<Cliente>) defaultRepository.findById(id);
   }
 
   public Cliente create(Cliente obj) {
-    return entityrepository.save(obj);
-  }
-  public Cliente update(Long id, Cliente obj) {
-    return entityrepository.save(obj);
-  }
-  
-  public void delete(Long id) {
-    entityrepository.deleteById(id);
+    // Encriptar contraseña
+    final String encryptedPassword = bCryptPasswordEncoder.encode(obj.getContrasena());
+    obj.setContrasena(encryptedPassword);
+    return defaultRepository.save(obj);
   }
 
+  public Cliente update(Long id, Cliente obj) {
+    // Obtener objeto actual
+    Optional<Cliente> optional = get(id);
+    if (optional.isPresent()) {
+      Cliente currentRecord = optional.get();
+      // Si se recibe una contraseña se encripta y se guarda / Sino se asigna su
+      // propia contraseña
+      if (obj.getContrasena() != "") {
+        // Encriptar contraseña
+        final String encryptedPassword = bCryptPasswordEncoder.encode(obj.getContrasena());
+        obj.setContrasena(encryptedPassword);
+      } else {
+        obj.setContrasena(currentRecord.getContrasena());
+      }
+    }
+    return defaultRepository.save(obj);
+  }
+
+  public void delete(Long id) {
+    defaultRepository.deleteById(id);
+  }
 
   public void eliminar(Long id) {
-    entityrepository.deleteById(id);
+    defaultRepository.deleteById(id);
   }
 
+  /**
+   * 
+   * @deprecated Usar create
+   */
   public Cliente registrar(Cliente model) {
     // Encriptar contraseña
     final String encryptedPassword = bCryptPasswordEncoder.encode(model.getPassword());
     model.setContrasena(encryptedPassword);
 
-    return entityrepository.save(model);
+    return defaultRepository.save(model);
   }
 
+  /**
+   * 
+   * @deprecated Usar update
+   */
   public Cliente guardarCliente(Cliente cliente) {
-    return entityrepository.save(cliente);
+    return defaultRepository.save(cliente);
   }
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-    final Optional<Cliente> optionalUser = entityrepository.findByCorreo(email);
+    final Optional<Cliente> optionalUser = defaultRepository.findByCorreoIgnoreCase(email);
 
     if (optionalUser.isPresent()) {
       return optionalUser.get();

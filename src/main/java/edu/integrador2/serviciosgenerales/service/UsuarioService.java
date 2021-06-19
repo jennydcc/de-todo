@@ -34,18 +34,18 @@ public class UsuarioService implements UserDetailsService {
     String requestUrl = request.getRequestURI();
     System.out.println(requestUrl);
     // Cliente
-    final Optional<Cliente> optionalUser = clienteRepository.findByCorreo(email);
+    final Optional<Cliente> optionalUser = clienteRepository.findByCorreoIgnoreCase(email);
     if (optionalUser.isPresent()) {
       return optionalUser.get();
     }
 
     // Especialista
-    final Optional<Especialista> optionalUser2 = especialistaRepository.findByCorreo(email);
+    final Optional<Especialista> optionalUser2 = especialistaRepository.findByCorreoIgnoreCase(email);
     if (optionalUser2.isPresent()) {
       return optionalUser2.get();
     }
     // Administrador
-    final Optional<Administrador> optionalUser3 = administradorRepository.findByCorreo(email);
+    final Optional<Administrador> optionalUser3 = administradorRepository.findByCorreoIgnoreCase(email);
     if (optionalUser3.isPresent()) {
       return optionalUser3.get();
     }

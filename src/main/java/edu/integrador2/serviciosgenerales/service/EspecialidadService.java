@@ -13,32 +13,32 @@ import edu.integrador2.serviciosgenerales.repository.EspecialidadRepository;
 @Service
 public class EspecialidadService {
   @Autowired
-  EspecialidadRepository entityRepository;
+  EspecialidadRepository defaultRepository;
 
   /**
    * @deprecated Usar list
    */
   public ArrayList<Especialidad> listar() {
-    return (ArrayList<Especialidad>) entityRepository.findAll();
+    return (ArrayList<Especialidad>) defaultRepository.findAll();
   }
 
   public List<Especialidad> list() {
-    return (List<Especialidad>) entityRepository.findAll();
+    return (List<Especialidad>) defaultRepository.findAll();
   }
 
   public Optional<Especialidad> get(Long id) {
-    return (Optional<Especialidad>) entityRepository.findById(id);
+    return (Optional<Especialidad>) defaultRepository.findById(id);
   }
 
   public Especialidad create(Especialidad obj) {
-    return entityRepository.save(obj);
+    return defaultRepository.save(obj);
   }
 
   public Especialidad update(Long id, Especialidad obj) {
-    return entityRepository.save(obj);
+    return defaultRepository.save(obj);
   }
 
   public void delete(Long id) {
-    entityRepository.deleteById(id);
+    defaultRepository.deleteById(id);
   }
 }

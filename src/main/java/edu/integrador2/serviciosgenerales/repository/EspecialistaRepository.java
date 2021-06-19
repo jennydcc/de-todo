@@ -9,5 +9,5 @@ import edu.integrador2.serviciosgenerales.entity.Especialista;
 
 @Repository
 public interface EspecialistaRepository extends CrudRepository<Especialista, Long> {
-  Optional<Especialista> findByCorreo(String correo);
+  Optional<Especialista> findByCorreoIgnoreCase(String correo);
 }
