@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.integrador2.serviciosgenerales.dto.ActividadDto;
 import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
-import edu.integrador2.serviciosgenerales.entity.Actividad;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.DistritoService;
