@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -20,13 +22,17 @@ public class Cliente extends Usuario {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_cliente", unique = true, nullable = false)
   private Long id;
+
+  @ManyToOne
+  @JoinColumn(name = "id_distrito")
+  Distrito distrito;
+
   private String apellidoPaterno;
   private String apellidoMaterno;
   private String telefono;
   private String direccion;
   private String departamento;
   private String provincia;
-  private String distrito;
   private String sexo;
   private String tipoDocumento;
   private String numeroDocumento;

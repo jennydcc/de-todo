@@ -1,5 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
 
 
 <th:block th:replace="header"></th:block>
@@ -12,40 +19,44 @@
           <div class="mb-3 row">
             <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
             <div class="col-sm-9">
-              <input type="text" id="nombre" name="nombre" class="form-control" required>
+              <input type="text" onkeypress="return /[a-z]/i.test(event.key)" id="nombre" name="nombre"
+                class="form-control" maxlength="40" required pattern="[A-Za-z]+">
             </div>
           </div>
-           <div class="mb-3 row">
+          <div class="mb-3 row">
             <label for="apellidoPaterno" class="col-sm-3 col-form-label">Apellido paterno</label>
             <div class="col-sm-9">
-              <input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-control" required>
+              <input type="text" onkeypress="return /[a-z]/i.test(event.key)" id="apellidoPaterno"
+                name="apellidoPaterno" class="form-control" maxlength="40" required pattern="[A-Za-z]+" />
             </div>
           </div>
           <div class="mb-3 row">
             <label for="apellidoMaterno" class="col-sm-3 col-form-label">Apellido materno</label>
             <div class="col-sm-9">
-              <input type="text" id="apellidoMaterno" name="apellidoMaterno" class="form-control" required>
+              <input type="text" onkeypress="return /[a-z]/i.test(event.key)" id="apellidoMaterno"
+                name="apellidoMaterno" class="form-control" maxlength="40" required pattern="[A-Za-z]+" />
             </div>
-          </div> 
+          </div>
           <div class="mb-3 row">
             <label for="correo" class="col-sm-3 col-form-label">Correo</label>
             <div class="col-sm-9">
-              <input type="email" id="correo" name="correo" class="form-control" autocomplete="off" required>
+              <input type="email" id="correo" name="correo" class="form-control" autocomplete="off" required />
             </div>
           </div>
-           <div class="mb-3 row">
+          <div class="mb-3 row">
             <label for="telefono" class="col-sm-3 col-form-label">Teléfono</label>
             <div class="col-sm-9">
-              <input type="tel" id="telefono" name="telefono" class="form-control" required>
+              <input type="tel" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..?)\../g, '$1');"
+                id="telefono" name="telefono" class="form-control" maxlength="9" required >
             </div>
-          </div> 
+          </div>
           <div class="mb-3 row">
             <label for="contrasena" class="col-sm-3 col-form-label">Contraseña</label>
             <div class="col-sm-9">
               <input type="password" id="contrasena" name="contrasena" class="form-control" required>
             </div>
           </div>
-           <div class="mb-3 row">
+          <div class="mb-3 row">
             <label for="contrasena2" class="col-sm-3 col-form-label">Repetir contraseña</label>
             <div class="col-sm-9">
               <input type="password" id="contrasena2" name="contrasena2" class="form-control" required>
@@ -54,21 +65,21 @@
           <div class="mb-3 row">
             <label for="direccion" class="col-sm-3 col-form-label">Dirección</label>
             <div class="col-sm-9">
-              <input type="passwd" id="direccion" name="direccion" class="form-control" required>
+              <input type="text" id="direccion" name="direccion" class="form-control" maxlength="40" required>
             </div>
           </div>
           <div class="mb-3 row">
-            <label for="direccion" class="col-sm-3 col-form-label">Departamento</label>
+            <label for="departamento" class="col-sm-3 col-form-label">Departamento</label>
             <div class="col-sm-9">
               <select class="form-select form-select-sm" name="departamento" required>
                 <option value="1">Lima</option>
               </select>
             </div>
-          </div> 
+          </div>
         </div>
         <div class="col-12 col-lg-5">
           <div class="mb-3 row">
-            <label for="direccion" class="col-sm-3 col-form-label">Provincia</label>
+            <label for="provincia" class="col-sm-3 col-form-label">Provincia</label>
             <div class="col-sm-9">
               <select class="form-select form-select-sm" name="provincia" required>
                 <option value="1">Lima</option>
@@ -76,23 +87,19 @@
             </div>
           </div>
           <div class="mb-3 row">
-            <label for="direccion" class="col-sm-3 col-form-label">Distrito</label>
+            <label for="distrito" class="col-sm-3 col-form-label">Distrito</label>
             <div class="col-sm-9">
-              <select class="form-select form-select-sm" name="distrito" required>
-                <option value="1">San Isidro</option>
-                <option value="2">Magdalena del Mar</option>
-                <option value="3">Pueblo Libre</option>
-                <option value="3">Lince</option>
-                <option value="3">San Borja</option>
+              <select class="form-select form-select-sm" name="idDistrito" required>
+                <option th:each="item: ${distrito}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
               </select>
             </div>
           </div>
-           <div class="mb-3 row">
+          <div class="mb-3 row">
             <label for="sexo" class="col-sm-3 col-form-label">Sexo</label>
             <div class="col-sm-9">
               <select class="form-select form-select-sm" name="sexo" id="sexo" required>
                 <option value="" selected>Seleccionar</option>
-                <option value="M" >Masculino</option>
+                <option value="M">Masculino</option>
                 <option value="F">Femenino</option>
               </select>
             </div>
@@ -100,48 +107,69 @@
           <div class="mb-3 row">
             <label for="tipoDocumento" class="col-sm-3 col-form-label">Tipo de documento</label>
             <div class="col-sm-9">
-              <select class="form-select form-select-sm" name="tipoDocumento" id="tipoDocumento" required>
+              <select onchange="onDniChange()" class="form-select form-select-sm" name="tipoDocumento" id="tipoDocumento" required>
                 <option value="DNI" selected>DNI</option>
                 <option value="PASAPORTE">PASAPORTE</option>
-                <option value="CARNET DE EXTRANJERIA">CE</option>
+                <option value="CARNET_EXTRANJERIA">CE</option>
                 <option value="OTROS">OTROS</option>
               </select>
             </div>
           </div>
           <div class="mb-3 row">
-            <label for="numeroDocumento" class="col-sm-3 col-form-label">Número</label>
+            <label for="numeroDocumento"  class="col-sm-3 col-form-label">Número</label>
             <div class="col-sm-9">
-              <input type="text" id="numeroDocumento" name="numeroDocumento" class="form-control" required>
+              <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..?)\../g, '$1');" id="numeroDocumento" name="numeroDocumento" class="form-control" maxlength="8"  required>
             </div>
           </div>
         </div>
-        <div class="form-check">
-          <input name="aceptaAcuerdo" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" required>
-          <label class="form-check-label" for="flexCheckChecked">
-            Aceptar los términos del contrato
-          </label>
-        </div>
       </div>
-      <div>
-        <div class="mt-3"> 
-          <table>
-          <tr>
-           <td>
-           <input type="submit" value="CONTINUAR" class="btn app-btn app-bg-primary text-white" />
-            </div>
-           </td>
-            <td>
-   <!--            <a href="/especialista/registrarservicio" class="btn app-btn app-bg-primary text-white">CONTINUAR</a>  -->
-            </td>
-
-            </tr>
-
-          </table>
-          <p th:text="${mensaje}" />
-        </div>
-    </form>
+      <div class="form-check">
+        <input name="aceptaAcuerdo" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" required>
+        <label class="form-check-label" for="flexCheckChecked">
+          Aceptar los términos del contrato
+        </label>
+      </div>
   </div>
+  <div>
+    <div class="mt-3">
+      <table>
+        <tr>
+          <td>
+            <input type="submit" value="CONTINUAR" class="btn app-btn app-bg-primary text-white" />
+    </div>
+    </td>
+    <td>
+      <!--            <a href="/especialista/registrarservicio" class="btn app-btn app-bg-primary text-white">CONTINUAR</a>  -->
+    </td>
+
+    </tr>
+
+    </table>
+    <p th:text="${mensaje}" />
+  </div>
+  </form>
+</div>
 </div>
 <th:block th:replace="footer"></th:block>
+
+<script>
+  function onDniChange() {
+    var select = document.getElementById("tipoDocumento").value;
+    var len = 8;
+    if(select=="PASAPORTE"  || select=="OTROS"){
+      len= 15;
+    }
+    if(select=="CARNET_EXTRANJERIA"){
+      len= 12;
+    }
+    if(select=="DNI"){
+      len= 8;
+    }
+   
+    document.getElementById("numeroDocumento").value="";
+    document.getElementById("numeroDocumento").maxLength=len;
+  }
+  
+  </script>
 
 </html>

@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import edu.integrador2.serviciosgenerales.dto.ClienteDto;
 import edu.integrador2.serviciosgenerales.dto.ServicioDto;
 import edu.integrador2.serviciosgenerales.entity.Cliente;
 import edu.integrador2.serviciosgenerales.entity.Servicio;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
+import edu.integrador2.serviciosgenerales.service.DistritoService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 import edu.integrador2.serviciosgenerales.service.ServicioService;
@@ -28,6 +30,9 @@ public class ClienteController {
   ServicioService servicioService;
   @Autowired
   EspecialistaService especialistaService;
+  @Autowired
+  DistritoService distritoService;
+
 
   @GetMapping("/cliente/")
   public String homePage(Model uiModel) {
@@ -44,12 +49,14 @@ public class ClienteController {
   @GetMapping("/cliente/registrar")
   public String registrarCliente(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
+    uiModel.addAttribute("distrito", distritoService.listar());
     return "cliente/registrar";
   }
 
   @PostMapping(path = "/cliente/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
-  public String postRegistrarCliente(Cliente model, Model uiModel) {
-    entityService.registrar(model);
+   public String postRegistrarCliente(ClienteDto dto, Model uiModel) {
+    Cliente entity = modelMapper.map(dto, Cliente.class);
+    entityService.registrar(entity);
     Template.addGlobalAttributes(uiModel);
     return "redirect:/cliente/login";
   }
