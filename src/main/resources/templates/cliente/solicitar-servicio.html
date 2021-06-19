@@ -4,33 +4,73 @@
 
 <th:block th:replace="header"></th:block>
 <th:block th:replace="cliente/_header"></th:block>
-<div class="container">
-  <h1>Solicitar Servicio</h1>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="mb-2 row">
-        <label for="direccion" class="col-sm-3 col-form-label">Categoría</label>
-        <div class="col-sm-6">
-          <select class="form-select form-select-sm" name="idEspecialidad" required>
-            <option th:each="item: ${especialidades}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>              
-          </select>
-                 
-        </div>
-        <div class="col-sm-3">
-              <button type="button" class="btn btn-outline-primary">Buscar</button>
-        </div>  
-
-           
+<div class="container mt-3">
+  <h1>Servicios</h1>
+  <form role="form" th:action="@{/cliente/solicitar-servicio}" th:method="post" class="mt-4">
+    <input type="hidden" name="idCliente" th:attr="value=${usuario.id}">
+    <div class="row">
+      <label for="direccion" class="col-sm-2 col-form-label">Categoría</label>
+      <div class="col-sm-4">
+        <select class="form-select form-select-sm" name="idEspecialidad" required>
+          <option th:each="item: ${especialidad}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+        </select>
       </div>
-      <div class="mb-3 row">
-        <label for="direccion" class="col-sm-3 col-form-label">Especialista</label>
-        <div class="col-sm-6">
-          <select class="form-select form-select-sm" name="idEspecialista" required>
-            <option th:each="item: ${especialistas}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
-          </select>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary">Buscar Especialista</button>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex">
+          <div class="p-2">
+            Precio<br>
+            Preferencial<br>
+            por visita
+          </div>
+          <div class="border rounded-1 pt-3 p-2">
+            <h3> S/.&nbsp;50.00</h3>
+          </div>
         </div>
       </div>
-      
+    </div>
+    <div class="row mb-3">
+      <label for="idEspecialista" class="col-md-2">Especialista</label>
+      <div class="col-md-4">
+        <select class="form-select form-select-sm" name="idEspecialista" id="idEspecialista" required>
+          <option th:each="item: ${especialistas}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+        </select>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <h3>Recomendacion <i class="bi-star-fill text-primary"></i><i class="bi-star-fill text-primary"></i></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3 row">
+          <label for="detalle" class="col-md-4 col-form-label">Detallar solicitud</label>
+          <div class="col-md-8">
+            <textarea type="text" id="detalle" name="detalle" class="form-control" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3 row">
+          <label for="telefono" class="col-sm-4 col-form-label">Teléfono</label>
+          <div class="col-sm-8">
+            <input type="text" id="telefono" name="telefono" class="form-control" required />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="direccion" class="col-sm-4 col-form-label">Dirección del servicio</label>
+          <div class="col-sm-8">
+            <input type="text" id="direccion" name="direccion" class="form-control" required />
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="fecha" class="col-sm-2 col-form-label">Seleccionar fecha de visita</label>
+        <div class="col-sm-4">
+          <input type="date" id="fecha" name="fecha" class="form-control" required />
+        </div>
+      </div>
     </div>
     <div class="d-flex">
       <div class="mt-3">

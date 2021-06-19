@@ -1,20 +1,30 @@
 package edu.integrador2.serviciosgenerales.controller;
 
+import java.io.IOException;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import edu.integrador2.serviciosgenerales.dto.ActividadDto;
+import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
+import edu.integrador2.serviciosgenerales.service.DistritoService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 
 @Controller
 public class EspecialistaController {
 
+  @Autowired
+  private ModelMapper modelMapper;
   @Autowired
   ClienteService clienteService;
   @Autowired
@@ -23,6 +33,9 @@ public class EspecialistaController {
   EspecialidadService especialidadService;
   @Autowired
   EspecialistaService especialistaService;
+  @Autowired
+  DistritoService distritoService;
+
 
   @GetMapping("/especialista/")
   public String homePage(Model uiModel) {
@@ -39,15 +52,43 @@ public class EspecialistaController {
   @GetMapping("/especialista/registrar")
   public String registrarEspecialista(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
+    uiModel.addAttribute("distrito", distritoService.listar());
     return "especialista/registrar";
   }
 
   @PostMapping(path = "/especialista/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
-  public String registrarEspecialista(Especialista model, Model uiModel) {
-    entityService.registrar(model);
+  public String registrarEspecialista(EspecialistaDto dto, Model uiModel) {
+    Especialista entity = modelMapper.map(dto, Especialista.class);
+    Especialista result =  entityService.registrar(entity);
     Template.addGlobalAttributes(uiModel);
-    return "redirect:/especialista/registrarservicio";
+    return "redirect:/especialista/registrarservicio?id=" + result.getId();
   }
+
+  @PostMapping(path = "/especialista/registrarservicio")
+  public String registrarServicio( ActividadDto model,  Model uiModel) throws IOException {
+    
+    /* System.out.println(model);
+    System.out.println(model.getIdespecialista());
+    System.out.println(model.getIdEspecialidad());
+    System.out.println(model.getVideoActividad());*/
+    System.out.println(model.getVideoActividad().getBytes());
+    //System.out.println(model.getPrecio());
+
+    Template.addGlobalAttributes(uiModel);
+    return "redirect:/especialista/registrarservicio?id=3";
+  }
+
+  @PostMapping(path = "/especialista/prueba") 
+  public String prueba(@RequestParam("file") MultipartFile file,  Model uiModel) throws IOException {
+    
+ 
+    System.out.println("Entro");  
+    System.out.println(file.getBytes());  
+    Template.addGlobalAttributes(uiModel);  
+    return "/especialista/registrarservicio?id=3"; 
+  }
+
+
 
   @GetMapping("/especialista/servicios-requeridos")
   public String solicitarServicio(Model uiModel) throws Exception {
@@ -56,6 +97,7 @@ public class EspecialistaController {
     return "especialista/servicios-requeridos";
   }
 
+  
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
@@ -77,6 +119,14 @@ public class EspecialistaController {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 3);
     return "especialista/modificar";
+  }
+
+  @GetMapping("/especialista/reportes")
+  public String reportesespecialista(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 4);
+    uiModel.addAttribute("distrito", distritoService.listar());
+    return "especialista/reportes";
   }
 
 }
