@@ -136,7 +136,9 @@ public class EspecialistaController {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 4);
     uiModel.addAttribute("distrito", distritoService.listar());
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
     return "especialista/reportes";
   }
 
 }
+  
