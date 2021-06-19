@@ -122,9 +122,10 @@ public class EspecialistaController {
   }
 
   @GetMapping("/especialista/reportes")
-  public String reporteespecialista(Model uiModel) {
+  public String reportesespecialista(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 4);
+    uiModel.addAttribute("distrito", distritoService.listar());
     return "especialista/reportes";
   }
 
