@@ -31,7 +31,7 @@ public class EspecialistaController {
   @Autowired
   ClienteService clienteService;
   @Autowired
-  EspecialistaService entityService;
+  EspecialistaService defaultService;
   @Autowired
   EspecialidadService especialidadService;
   @Autowired
@@ -43,8 +43,6 @@ public class EspecialistaController {
   @Autowired
   ServicioService servicioService;
 
-
- 
   @GetMapping("/especialista/")
   public String serviciosrequeridos(Model uiModel) throws Exception {
     // Template.addGlobalAttributes(uiModel);
@@ -67,37 +65,35 @@ public class EspecialistaController {
   @PostMapping(path = "/especialista/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String registrarEspecialista(EspecialistaDto dto, Model uiModel) {
     Especialista entity = modelMapper.map(dto, Especialista.class);
-    Especialista result =  entityService.registrar(entity);
+    Especialista result = defaultService.create(entity);
     Template.addGlobalAttributes(uiModel);
     return "redirect:/especialista/registrarservicio?id=" + result.getId();
   }
 
   @PostMapping(path = "/especialista/registrarservicio")
-  public String registrarServicio( ActividadDto dto,  Model uiModel) throws IOException {
-    Actividad entity = modelMapper.map (dto, Actividad.class);
+  public String registrarServicio(ActividadDto dto, Model uiModel) throws IOException {
+    Actividad entity = modelMapper.map(dto, Actividad.class);
     actividadService.registrar(entity);
     Template.addGlobalAttributes(uiModel);
 
-    /* System.out.println(model);
-    System.out.println(model.getIdespecialista());
-    System.out.println(model.getIdEspecialidad());
-    System.out.println(model.getVideoActividad());*/
-    //System.out.println(model.getVideoActividad().getBytes());
-    //System.out.println(model.getPrecio());
+    /*
+     * System.out.println(model); System.out.println(model.getIdespecialista());
+     * System.out.println(model.getIdEspecialidad());
+     * System.out.println(model.getVideoActividad());
+     */
+    // System.out.println(model.getVideoActividad().getBytes());
+    // System.out.println(model.getPrecio());
     return "redirect:/especialista/login";
   }
 
-  @PostMapping(path = "/especialista/prueba") 
-  public String prueba(@RequestParam("file") MultipartFile file,  Model uiModel) throws IOException {
-    
- 
-    System.out.println("Entro");  
-    System.out.println(file.getBytes());  
-    Template.addGlobalAttributes(uiModel);  
-    return "/especialista/registrarservicio?id=3"; 
+  @PostMapping(path = "/especialista/prueba")
+  public String prueba(@RequestParam("file") MultipartFile file, Model uiModel) throws IOException {
+
+    System.out.println("Entro");
+    System.out.println(file.getBytes());
+    Template.addGlobalAttributes(uiModel);
+    return "/especialista/registrarservicio?id=3";
   }
-
-
 
   @GetMapping("/especialista/servicios-requeridos")
   public String solicitarServicio(Model uiModel) throws Exception {
@@ -107,7 +103,6 @@ public class EspecialistaController {
     return "especialista/servicios-requeridos";
   }
 
-  
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
@@ -141,4 +136,3 @@ public class EspecialistaController {
   }
 
 }
-  

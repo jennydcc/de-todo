@@ -9,25 +9,21 @@ import org.springframework.mail.javamail.JavaMailSender;
 @Service
 public class NotificationService {
 
-
   private JavaMailSender javaMailSender;
-  
 
   @Autowired
-  public NotificationService(JavaMailSender javaMailSender){
-    this.javaMailSender= javaMailSender;
+  public NotificationService(JavaMailSender javaMailSender) {
+    this.javaMailSender = javaMailSender;
   }
 
-  /*public void sendNotification(User user) throws MailException {
-    //send email
-    SimpleMailMessage mail= new SimpleMailMessage();
+/*   public void sendNotification(User user) throws MailException { // send email
+    SimpleMailMessage mail = new SimpleMailMessage();
     mail.setTo(user.getEmailAddress());
     mail.setFrom("u17209943@utp.edu.pe");
     mail.setSubject("Solicitud Aceptada");
     mail.setText("El especialista a aceptado tu solicitud");
 
-    javaMailSender.send(mail);*/
-
-  }
+    javaMailSender.send(mail);
+  } */
 
 }

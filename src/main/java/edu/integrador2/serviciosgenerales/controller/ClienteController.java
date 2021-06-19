@@ -23,7 +23,7 @@ public class ClienteController {
   @Autowired
   private ModelMapper modelMapper;
   @Autowired
-  ClienteService entityService;
+  ClienteService defaultService;
   @Autowired
   EspecialidadService especialidadService;
   @Autowired
@@ -32,7 +32,6 @@ public class ClienteController {
   EspecialistaService especialistaService;
   @Autowired
   DistritoService distritoService;
-
 
   @GetMapping("/cliente/")
   public String homePage(Model uiModel) {
@@ -54,9 +53,9 @@ public class ClienteController {
   }
 
   @PostMapping(path = "/cliente/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
-   public String postRegistrarCliente(ClienteDto dto, Model uiModel) {
+  public String postRegistrarCliente(ClienteDto dto, Model uiModel) {
     Cliente entity = modelMapper.map(dto, Cliente.class);
-    entityService.registrar(entity);
+    defaultService.create(entity);
     Template.addGlobalAttributes(uiModel);
     return "redirect:/cliente/login";
   }
