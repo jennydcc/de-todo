@@ -18,7 +18,7 @@ public class NotificationService {
     this.javaMailSender= javaMailSender;
   }
 
-  public void sendNotification(User user) throws MailException {
+  /*public void sendNotification(User user) throws MailException {
     //send email
     SimpleMailMessage mail= new SimpleMailMessage();
     mail.setTo(user.getEmailAddress());
@@ -26,7 +26,7 @@ public class NotificationService {
     mail.setSubject("Solicitud Aceptada");
     mail.setText("El especialista a aceptado tu solicitud");
 
-    javaMailSender.send(mail);
+    javaMailSender.send(mail);*/
 
   }
 
