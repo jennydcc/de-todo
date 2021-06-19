@@ -6,35 +6,38 @@
 
 <div class="container">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">CLIENTE</th>
-      <th scope="col">DESCRIPCIÓN DEL SERVICIO</th>
-      <th scope="col">TELÉFONO</th>
-      <th scope="col">DIRECCIÓN</th>
-      <th scope="col">DISTRITO</th>
-      <th scope="col">ESTADO</th>
-      <th scope="col">ACCIONES</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row">
-          <option th:each="item: ${servicios}" th:text="${item.id_cliente}" th:attr="value=${item.id}"></option>
+  <form role="form" th:action="@{/cliente/servicios - solicitados}" th:method="post" class="mt-4">
+    <input type="hidden" name="idCliente" th:attr="value=${usuario.id}">
 
-      </td>
-      <td>mantenimiento gasfiteria</td>
-      <td>999454345</td>
-      <td>av c </td>
-      <td>lima</td>
-      <td>pendiente</td>
-      <td><input type="button" value="Atender">  <input type="button" value="Reporte"> </td>
-    </tr>
-    
-  </tbody>
-</table>
+    <div class="row">
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">CLIENTE</th>
+            <th scope="col">DESCRIPCIÓN DEL SERVICIO</th>
+            <th scope="col">TELÉFONO</th>
+            <th scope="col">DIRECCIÓN</th>
+            <th scope="col">DISTRITO</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="item: ${serviciosSolicitados}">
+            <td th:text="${item.clienteNombre}"></td>
+            <td th:text="${item.detalle}"></td>
+            <td th:text="${item.telefono}"></td>
+            <td th:text="${item.direccion}"></td>
+            <td>SAN MIGUEL</td>
+            <td>SOLICITADO</td>
+            <td><input type="button"  value="Atender"> <input type="button" value="Cancelar"> <input type="button" value="Finalizar" disabled > </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </form>
 </div>
 
 <th:block th:replace="footer"></th:block>
