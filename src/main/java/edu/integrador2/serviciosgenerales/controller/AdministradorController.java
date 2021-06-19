@@ -31,12 +31,20 @@ public class AdministradorController {
   }
 
   /* vista reportes, mantenimiento-controller */
-
+/*
   @GetMapping("/administrador/inicio")
   public String adminHome(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
     uiModel.addAttribute("clientes", clienteService.listarClientes());
+    return "administrador/inicio";
+  }*/
+  
+  @GetMapping("/administrador/inicio")
+  public String adminHome(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 0);
+    // uiModel.addAttribute("adminEspecialista", clienteService.listarClientes());
     return "administrador/inicio";
   }
 
@@ -62,14 +70,30 @@ public class AdministradorController {
     Template.addPageIndex(uiModel, 3);
     return "administrador/especialidades";
   }
+  
+  @GetMapping("/administrador/administradores")
+  public String administradores(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 4);
+    return "administrador/administradores";
+  }
+
+  @GetMapping("/administrador/especialistas")
+  public String especialistas(Model uiModel) throws Exception {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 5);
+    return "administrador/especialistas";
+  }
 
   @GetMapping("/administrador/reportes")
   public String reportesAdmin(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 4);
+    Template.addPageIndex(uiModel, 6);
     // uiModel.addAttribute("reportesAdmin", clienteService.listarClientes());
     return "administrador/reportes";
   }
+
+  
 
   /* Eliminar registros de mantenimiento */
 

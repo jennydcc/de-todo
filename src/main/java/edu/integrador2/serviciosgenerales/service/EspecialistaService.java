@@ -2,6 +2,7 @@ package edu.integrador2.serviciosgenerales.service;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,32 @@ public class EspecialistaService implements UserDetailsService {
   @Autowired
   EspecialistaRepository especialistaRepository;
 
+
+  public List<Especialista> list() {
+    return (List<Especialista>) especialistaRepository.findAll();
+  }
+
+  public Optional<Especialista> get(Long id) {
+    return (Optional<Especialista>) especialistaRepository.findById(id);
+  }
+
+  public Especialista create(Especialista obj) {
+    return especialistaRepository.save(obj);
+  }
+
+  public Especialista update(Long id, Especialista obj) {
+    return especialistaRepository.save(obj);
+  }
+
+  public void delete(Long id) {
+    especialistaRepository.deleteById(id);
+  }
+
+
   public ArrayList<Especialista> listar() {
     return (ArrayList<Especialista>) especialistaRepository.findAll();
   }
+
 
   public Optional<Especialista> obterner(Long id) {
     return (Optional<Especialista>) especialistaRepository.findById(id);

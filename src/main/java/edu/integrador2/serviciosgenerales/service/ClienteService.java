@@ -2,6 +2,7 @@ package edu.integrador2.serviciosgenerales.service;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,26 @@ public class ClienteService implements UserDetailsService {
   public ArrayList<Cliente> listarClientes() {
     return (ArrayList<Cliente>) entityrepository.findAll();
   }
+
+  public List<Cliente> list() {
+    return (List<Cliente>) entityrepository.findAll();
+  }
+
+  public Optional<Cliente> get(Long id) {
+    return (Optional<Cliente>) entityrepository.findById(id);
+  }
+
+  public Cliente create(Cliente obj) {
+    return entityrepository.save(obj);
+  }
+  public Cliente update(Long id, Cliente obj) {
+    return entityrepository.save(obj);
+  }
+  
+  public void delete(Long id) {
+    entityrepository.deleteById(id);
+  }
+
 
   public void eliminar(Long id) {
     entityrepository.deleteById(id);

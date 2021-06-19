@@ -9,5 +9,5 @@ import edu.integrador2.serviciosgenerales.entity.Administrador;
 
 @Repository
 public interface AdministradorRepository extends CrudRepository<Administrador, Long> {
-  Optional<Administrador> findByCorreo(String correo);
+ Optional<Administrador> findByCorreo(String correo);
 }
