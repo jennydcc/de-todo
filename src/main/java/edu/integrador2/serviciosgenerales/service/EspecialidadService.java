@@ -1,6 +1,5 @@
 package edu.integrador2.serviciosgenerales.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,13 +13,6 @@ import edu.integrador2.serviciosgenerales.repository.EspecialidadRepository;
 public class EspecialidadService {
   @Autowired
   EspecialidadRepository defaultRepository;
-
-  /**
-   * @deprecated Usar list
-   */
-  public ArrayList<Especialidad> listar() {
-    return (ArrayList<Especialidad>) defaultRepository.findAll();
-  }
 
   public List<Especialidad> list() {
     return (List<Especialidad>) defaultRepository.findAll();

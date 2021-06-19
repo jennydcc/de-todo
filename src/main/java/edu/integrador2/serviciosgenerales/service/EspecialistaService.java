@@ -44,26 +44,6 @@ public class EspecialistaService implements UserDetailsService {
     return (Optional<Especialista>) defaultRepository.findById(id);
   }
 
-  /**
-   * 
-   * @deprecated Usar create
-   */
-  public Especialista registrar(Especialista model) {
-    // Encriptar contraseña
-    final String encryptedPassword = bCryptPasswordEncoder.encode(model.getPassword());
-    model.setContrasena(encryptedPassword);
-
-    return defaultRepository.save(model);
-  }
-
-  /**
-   * 
-   * @deprecated Usar update
-   */
-  public Especialista actualizar(Long id, Especialista model) {
-    return defaultRepository.save(model);
-  }
-
   public Especialista create(Especialista obj) {
     // Encriptar contraseña
     final String encryptedPassword = bCryptPasswordEncoder.encode(obj.getContrasena());

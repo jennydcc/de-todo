@@ -22,13 +22,6 @@ public class AdministradorService {
     @Autowired
     AdministradorRepository defaultRepository;
 
-    /**
-     * @deprecated Usar list
-     */
-    public ArrayList<Administrador> listar() {
-        return (ArrayList<Administrador>) defaultRepository.findAll();
-    }
-
     public List<AdministradorDto> list() {
         List<Administrador> list = (List<Administrador>) defaultRepository.findAll();
         List<AdministradorDto> result = new ArrayList<>();

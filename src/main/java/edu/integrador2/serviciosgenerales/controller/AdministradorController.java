@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import edu.integrador2.serviciosgenerales.entity.Servicio;
+import edu.integrador2.serviciosgenerales.service.AdministradorService;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 
@@ -17,6 +18,8 @@ public class AdministradorController {
   ClienteService clienteService;
   @Autowired
   EspecialistaService especialistaService;
+  @Autowired
+  AdministradorService administradorService;
 
   @GetMapping("/administrador/")
   public String inicio(Model uiModel) throws Exception {
@@ -31,15 +34,13 @@ public class AdministradorController {
   }
 
   /* vista reportes, mantenimiento-controller */
-/*
-  @GetMapping("/administrador/inicio")
-  public String adminHome(Model uiModel) throws Exception {
-    Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 0);
-    uiModel.addAttribute("clientes", clienteService.listarClientes());
-    return "administrador/inicio";
-  }*/
-  
+  /*
+   * @GetMapping("/administrador/inicio") public String adminHome(Model uiModel)
+   * throws Exception { Template.addGlobalAttributes(uiModel);
+   * Template.addPageIndex(uiModel, 0); uiModel.addAttribute("clientes",
+   * clienteService.listarClientes()); return "administrador/inicio"; }
+   */
+
   @GetMapping("/administrador/inicio")
   public String adminHome(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
@@ -70,7 +71,7 @@ public class AdministradorController {
     Template.addPageIndex(uiModel, 3);
     return "administrador/especialidades";
   }
-  
+
   @GetMapping("/administrador/administradores")
   public String administradores(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
@@ -89,11 +90,11 @@ public class AdministradorController {
   public String reportesAdmin(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 6);
-    // uiModel.addAttribute("reportesAdmin", clienteService.listarClientes());
+    uiModel.addAttribute("clientes", clienteService.list());
+    uiModel.addAttribute("especialistas", especialistaService.list());
+    uiModel.addAttribute("administradores", administradorService.list());
     return "administrador/reportes";
   }
-
-  
 
   /* Eliminar registros de mantenimiento */
 

@@ -1,7 +1,6 @@
 package edu.integrador2.serviciosgenerales.service;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +20,6 @@ public class ClienteService implements UserDetailsService {
   BCryptPasswordEncoder bCryptPasswordEncoder;
   @Autowired
   ClienteRepository defaultRepository;
-
-  public ArrayList<Cliente> listarClientes() {
-    return (ArrayList<Cliente>) defaultRepository.findAll();
-  }
 
   public List<Cliente> list() {
     return (List<Cliente>) defaultRepository.findAll();
@@ -65,26 +60,6 @@ public class ClienteService implements UserDetailsService {
 
   public void eliminar(Long id) {
     defaultRepository.deleteById(id);
-  }
-
-  /**
-   * 
-   * @deprecated Usar create
-   */
-  public Cliente registrar(Cliente model) {
-    // Encriptar contraseña
-    final String encryptedPassword = bCryptPasswordEncoder.encode(model.getPassword());
-    model.setContrasena(encryptedPassword);
-
-    return defaultRepository.save(model);
-  }
-
-  /**
-   * 
-   * @deprecated Usar update
-   */
-  public Cliente guardarCliente(Cliente cliente) {
-    return defaultRepository.save(cliente);
   }
 
   @Override
