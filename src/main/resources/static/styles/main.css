@@ -112,4 +112,25 @@ hr.bar {
   .no-print{
     display:none;
   }
+  .nav{
+    display: none;
+  }
+  .nav-tabs{
+    display:none;
+  }
+  h1.flex-fil{
+    display:none;
+  }
+  h1.text-right {
+    display:none;
+  }
+  #cabecera{
+    display:none;
+  }
+  #titulo{
+    display:none;
+  }
+  #pie{
+    display: none;
+  }
 }

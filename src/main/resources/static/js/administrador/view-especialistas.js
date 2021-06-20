@@ -9,7 +9,7 @@ const View = {
   },
   mounted() {
     // Crea servicio para hacer peticiones REST
-    this.defaultService = ApiRest.createService('/api/v1/especialista');
+    this.defaultService = ApiRest.createService('/api/v1/especialistas');
     this.loadData();
   },
   // Metodos
