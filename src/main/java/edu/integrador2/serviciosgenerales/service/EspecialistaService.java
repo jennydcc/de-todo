@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,13 +13,18 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
+import edu.integrador2.serviciosgenerales.entity.Usuario;
 import edu.integrador2.serviciosgenerales.repository.EspecialistaRepository;
+import edu.integrador2.serviciosgenerales.security.SessionManager;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
 public class EspecialistaService implements UserDetailsService {
+  @Autowired
+  private ModelMapper modelMapper;
   private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
   @Autowired
@@ -30,6 +36,19 @@ public class EspecialistaService implements UserDetailsService {
 
   public Optional<Especialista> get(Long id) {
     return (Optional<Especialista>) defaultRepository.findById(id);
+  }
+
+  public Optional<EspecialistaDto> getLoggedIn() {
+    Usuario loggedUser = SessionManager.getUsuario();
+    Optional<Especialista> OptionalObj = (Optional<Especialista>) defaultRepository.findById(loggedUser.getId());
+    Optional<EspecialistaDto> optionalDto = Optional.ofNullable(null);
+    // Entidad -> Dto
+    if (OptionalObj.isPresent()) {
+      EspecialistaDto dto = modelMapper.map(OptionalObj.get(), EspecialistaDto.class);
+      dto.setContrasena("");
+      optionalDto = Optional.of(dto);
+    }
+    return optionalDto;
   }
 
   public void delete(Long id) {
@@ -44,14 +63,18 @@ public class EspecialistaService implements UserDetailsService {
     return (Optional<Especialista>) defaultRepository.findById(id);
   }
 
-  public Especialista create(Especialista obj) {
+  public EspecialistaDto create(Especialista obj) {
     // Encriptar contraseña
     final String encryptedPassword = bCryptPasswordEncoder.encode(obj.getContrasena());
     obj.setContrasena(encryptedPassword);
-    return defaultRepository.save(obj);
+    defaultRepository.save(obj);
+    // Nunca retornamos la contaseña al cliente
+    obj.setContrasena("");
+    // Entidad -> Dto
+    return modelMapper.map(obj, EspecialistaDto.class);
   }
 
-  public Especialista update(Long id, Especialista obj) {
+  public EspecialistaDto update(Long id, Especialista obj) {
     // Obtener objeto actual
     Optional<Especialista> optional = get(id);
     if (optional.isPresent()) {
@@ -66,7 +89,11 @@ public class EspecialistaService implements UserDetailsService {
         obj.setContrasena(currentRecord.getContrasena());
       }
     }
-    return defaultRepository.save(obj);
+    defaultRepository.save(obj);
+    // Nunca retornamos la contaseña al cliente
+    obj.setContrasena("");
+    // Entidad -> Dto
+    return modelMapper.map(obj, EspecialistaDto.class);
   }
 
   public void eliminar(Long id) {

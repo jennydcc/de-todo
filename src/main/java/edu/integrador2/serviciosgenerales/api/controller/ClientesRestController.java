@@ -3,6 +3,7 @@ package edu.integrador2.serviciosgenerales.api.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.integrador2.serviciosgenerales.dto.ClienteDto;
 import edu.integrador2.serviciosgenerales.entity.Cliente;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 
@@ -20,33 +22,41 @@ import edu.integrador2.serviciosgenerales.service.ClienteService;
 @RequestMapping("/api/v1/clientes")
 public class ClientesRestController {
   @Autowired
-  ClienteService clienteService;
+  private ModelMapper modelMapper;
+  @Autowired
+  ClienteService defaultService;
 
   @GetMapping()
   public List<Cliente> list() {
-    return clienteService.list();
+    return defaultService.list();
+  }
+
+  @GetMapping(value = "/logged-in")
+  public Optional<ClienteDto> getLoggedIn() {
+    return defaultService.getLoggedIn();
   }
 
   @GetMapping(value = "/{id}")
   public Optional<Cliente> get(@PathVariable Long id) {
-    return clienteService.get(id);
+    return defaultService.get(id);
   }
-  
+
   @PostMapping()
-  public Cliente create(@RequestBody Cliente model) {
-    return clienteService.create(model);
+  public ClienteDto create(@RequestBody ClienteDto dto) {
+    Cliente entity = modelMapper.map(dto, Cliente.class);
+    return defaultService.create(entity);
   }
-  
+
   @PutMapping(value = "/{id}")
-  public Cliente update(@PathVariable Long id, @RequestBody Cliente model) {
-    return clienteService.update(id, model);
+  public ClienteDto update(@PathVariable Long id, @RequestBody ClienteDto dto) {
+    Cliente entity = modelMapper.map(dto, Cliente.class);
+    return defaultService.update(id, entity);
   }
 
   @DeleteMapping(value = "/{id}")
   public boolean eliminar(@PathVariable Long id) {
-    clienteService.delete(id);
+    defaultService.delete(id);
     return true;
   }
-
 
 }

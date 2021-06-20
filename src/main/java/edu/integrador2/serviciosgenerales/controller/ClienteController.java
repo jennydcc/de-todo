@@ -34,9 +34,8 @@ public class ClienteController {
   DistritoService distritoService;
 
   @GetMapping("/cliente/")
-  public String homePage(Model uiModel) {
-    Template.addGlobalAttributes(uiModel);
-    return "cliente/servicios-solicitados";
+  public String homePage(Model uiModel) throws Exception {
+    return serviciosSolicitados(uiModel);
   }
 
   @GetMapping("/cliente/login")

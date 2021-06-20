@@ -65,7 +65,7 @@ public class EspecialistaController {
   @PostMapping(path = "/especialista/registrar", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
   public String registrarEspecialista(EspecialistaDto dto, Model uiModel) {
     Especialista entity = modelMapper.map(dto, Especialista.class);
-    Especialista result = defaultService.create(entity);
+    EspecialistaDto result = defaultService.create(entity);
     Template.addGlobalAttributes(uiModel);
     return "redirect:/especialista/registrarservicio?id=" + result.getId();
   }

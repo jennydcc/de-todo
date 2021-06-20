@@ -2,6 +2,7 @@ package edu.integrador2.serviciosgenerales.api.controller;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
 import java.util.Optional;
@@ -18,34 +20,43 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/api/v1/especialistas")
-public class EspecialistaRestController {
+public class EspecialistasRestController {
+  @Autowired
+  private ModelMapper modelMapper;
 
   @Autowired
-  EspecialistaService especialistaService;
+  EspecialistaService defaultService;
 
   @GetMapping()
   public List<Especialista> list() {
-    return especialistaService.list();
+    return defaultService.list();
+  }
+
+  @GetMapping(value = "/logged-in")
+  public Optional<EspecialistaDto> getLoggedIn() {
+    return defaultService.getLoggedIn();
   }
 
   @GetMapping(value = "/{id}")
   public Optional<Especialista> get(@PathVariable Long id) {
-    return especialistaService.get(id);
+    return defaultService.get(id);
   }
 
   @PostMapping()
-  public Especialista create(@RequestBody Especialista model) {
-    return especialistaService.create(model);
+  public EspecialistaDto create(@RequestBody Especialista dto) {
+    Especialista entity = modelMapper.map(dto, Especialista.class);
+    return defaultService.create(entity);
   }
 
   @PutMapping(value = "/{id}")
-  public Especialista update(@PathVariable Long id, @RequestBody Especialista model) {
-    return especialistaService.update(id, model);
+  public EspecialistaDto update(@PathVariable Long id, @RequestBody EspecialistaDto dto) {
+    Especialista entity = modelMapper.map(dto, Especialista.class);
+    return defaultService.update(id, entity);
   }
 
   @DeleteMapping(value = "/{id}")
   public boolean eliminar(@PathVariable Long id) {
-    especialistaService.delete(id);
+    defaultService.delete(id);
     return true;
   }
 

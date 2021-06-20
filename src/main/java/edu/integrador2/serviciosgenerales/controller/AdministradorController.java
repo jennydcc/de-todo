@@ -23,8 +23,7 @@ public class AdministradorController {
 
   @GetMapping("/administrador/")
   public String inicio(Model uiModel) throws Exception {
-    // Template.addGlobalAttributes(uiModel);
-    return adminHome(uiModel);
+    return home(uiModel);
   }
 
   @GetMapping("/administrador/login")
@@ -33,19 +32,10 @@ public class AdministradorController {
     return "administrador/login";
   }
 
-  /* vista reportes, mantenimiento-controller */
-  /*
-   * @GetMapping("/administrador/inicio") public String adminHome(Model uiModel)
-   * throws Exception { Template.addGlobalAttributes(uiModel);
-   * Template.addPageIndex(uiModel, 0); uiModel.addAttribute("clientes",
-   * clienteService.listarClientes()); return "administrador/inicio"; }
-   */
-
   @GetMapping("/administrador/inicio")
-  public String adminHome(Model uiModel) throws Exception {
+  public String home(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
-    // uiModel.addAttribute("adminEspecialista", clienteService.listarClientes());
     return "administrador/inicio";
   }
 
