@@ -17,8 +17,8 @@
     </div>
     <div class="col-sm-6">
       <p>
-        <img src="/src/main/resources/static/images/logoserviciosgenerales.png" class="img-fluid"
-          alt="logoserviciosgenerales">
+        <!--<img src="/src/main/resources/static/images/logoserviciosgenerales.png" class="img-fluid"
+          alt="logoserviciosgenerales">-->
       </p>
     </div>
   </div>
@@ -32,46 +32,9 @@
     </div>
   </div>
 
-  <h3 class=titreporte>REPORTE USUARIOS DEL SISTEMA</h3>
+  <h3 class=titreporte>REPORTE DE USUARIOS DEL SISTEMA</h3>
   <hr class=bar>
 
-  <div class="row">
-
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Nro.</th>
-          <th scope="col">Usuario</th>
-          <th scope="col">Rol</th>
-          <th scope="col">Fecha Ingreso</th>
-          <th scope="col">Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>igomez@gmail.com</td>
-          <td>Especialista</td>
-          <td>01/05/2021</td>
-          <td>Activo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>martin@mail.com</td>
-          <td>Especialista</td>
-          <td>15/05/2021</td>
-          <td>Activo</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>karen@gmail.com</td>
-          <td>Cliente</td>
-          <td>10/05/2021</td>
-          <td>Activo</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
   <!-- Lista de clientes-->
   <div>
     <h4>CLIENTES</h4>
@@ -82,7 +45,8 @@
           <th scope="col">NOMBRES</th>
           <th scope="col">APELLIDOS</th>
           <th scope="col">DNI</th>
-          <th scope="col">Estado</th>
+          <th scope="col">CORREO</th>
+          <th scope="col">ESTADO</th>
         </tr>
       </thead>
       <tbody>
@@ -91,6 +55,8 @@
           <td th:text="${item.nombre}"></td>
           <td th:text="|${item.apellidoPaterno} ${item.apellidoMaterno}|"></td>
           <td th:text="${item.numeroDocumento}"></td>
+          <td th:text="${item.correo}"></td>
+          <td th:text="${item.habilitado}"></td>
         </tr>
       </tbody>
     </table>
@@ -105,7 +71,8 @@
           <th scope="col">NOMBRES</th>
           <th scope="col">APELLIDOS</th>
           <th scope="col">DNI</th>
-          <th scope="col">Estado</th>
+          <th scope="col">CORREO</th>
+          <th scope="col">ESTADO</th>
         </tr>
       </thead>
       <tbody>
@@ -114,6 +81,8 @@
           <td th:text="${item.nombre}"></td>
           <td th:text="|${item.apellidoPaterno} ${item.apellidoMaterno}|"></td>
           <td th:text="${item.numeroDocumento}"></td>
+          <td th:text="${item.correo}"></td>
+          <td th:text="${item.habilitado}"></td>
         </tr>
       </tbody>
     </table>
@@ -124,9 +93,10 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Nro.</th>
+           <th scope="col">Nro.</th>
           <th scope="col">NOMBRES</th>
           <th scope="col">CORREO</th>
+          <th scope="col">ESTADO</th>
         </tr>
       </thead>
       <tbody>
@@ -134,6 +104,7 @@
           <td th:text="${item.id}"></td>
           <td th:text="${item.nombre}"></td>
           <td th:text="${item.correo}"></td>
+          <td th:text="${item.habilitado}"></td>
         </tr>
       </tbody>
     </table>

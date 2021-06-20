@@ -15,8 +15,8 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">NOMBRE</th>
           <th scope="col">CORREO</th>
-          <th scope="col">TIPO</th>
           <th scope="col">HABILITADO</th>
           <th scope="col">ACCIONES</th>
         </tr>
@@ -25,7 +25,7 @@
         <tr v-for="rec in records">
           <td>{{rec.id}}</td>
           <td>{{rec.correo}}</td>
-          <td>{{rec.tipoUsuario}}</td>
+          <td>{{rec.correo}}</td>
           <td>{{rec.habilitado}}</td>
           <td>
             <i @click="handleDeleteRecordClick(rec)" class="bi bi-x-square-fill" style="font-size: 24px;"></i>
@@ -89,7 +89,7 @@
 
 <th:block th:replace="footer"></th:block>
 <!-- Dynamic view javascript -->
-<script src="/js/administrador/view-administradores.js"></script>
+<script src="/js/administrador/view-especialistas.js"></script>
 </body>
 
 </html>
