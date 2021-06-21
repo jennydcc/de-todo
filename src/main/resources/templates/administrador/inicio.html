@@ -29,7 +29,7 @@
           <td>{{rec.habilitado}}</td>
           <td>
             <i @click="handleDeleteRecordClick(rec)" class="bi bi-x-square-fill" style="font-size: 24px;"></i>
-            <i @click="handleEditRecordClick(rec)" class="bi bi-pencil-square" style="font-size: 24px;"></i>
+           <!-- <i @click="handleEditRecordClick(rec)" class="bi bi-pencil-square" style="font-size: 24px;"></i>-->
           </td>
         </tr>
       </tbody>
@@ -73,7 +73,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Seguro que desea eliminar la especialidad:<br>
+            Seguro que desea eliminar cliente:<br>
             <b>{{deletingRecord.nombre}}</b>
           </div>
           <div class="modal-footer">
