@@ -22,7 +22,7 @@
         <td th:text="${item.especialistaNombre}"></td>
         <td th:text="${item.detalle}"></td>
         <td th:text="${item.especialidadNombre}"></td>
-        <td>SOLICITADO</td>
+        <td th:text="${item.estado}"></td>
       <td><a th:href="@{/servicio/cancelar-solicitud/{id}(id=${item.id})}"><i class="bi bi-x-square-fill" style="font-size: 24px;"></i></a></td>
       <!-- <td><a href="#">Calificar</a> | <a th:href="@{/servicio/cancelar-solicitud/{id}(id=${item.id})}">Cancelar solicitud</a></td>--> 
     <td>

@@ -6,9 +6,6 @@
 
 <div class="container">
 
-  <form role="form" th:action="@{/cliente/servicios - solicitados}" th:method="post" class="mt-4">
-    <input type="hidden" name="idCliente" th:attr="value=${usuario.id}">
-
     <div class="row">
 
       <table class="table">
@@ -20,7 +17,7 @@
             <th scope="col">DIRECCIÓN</th>
             <th scope="col">DISTRITO</th>
             <th scope="col">ESTADO</th>
-            <th scope="col">ACCIONES</th>
+            <th scope="col" colspan="3" style="text-align:center">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
@@ -29,18 +26,102 @@
             <td th:text="${item.detalle}"></td>
             <td th:text="${item.telefono}"></td>
             <td th:text="${item.direccion}"></td>
-            <td>SAN MIGUEL</td>
-            <td>SOLICITADO</td>
-            <td><input type="button"  value="Atender"> <input type="button" value="Cancelar"> <input type="button" value="Finalizar" disabled > </td>
-          </tr>
+            <td th:text="${item.distritoNombre}"></td>
+            <td th:text="${item.estado}"></td>
+            
+            <td>
+              <form role="form" th:action="@{/especialista/servicios-requeridos}" th:method="post" class="mt-4">
+                <input type="hidden" name="btnEnvio" value="0">
+                <input type="hidden" name="idservicio" th:value=${item.id}>
+                <input type="hidden" name="correo" th:value=${item.correo}> 
+                <input type="hidden" name="estado" th:value=${item.estado}>  
+                <!--<input onclick={}    type="submit"  value="Atender">-->
 
+
+                <div th:if="${item.estado =='SOLICITADO'}">
+                  <input  type="submit"  value="Atender">
+               </div>
+
+               <div th:if="${item.estado =='EN_PROCESO'}">
+                <input  type="submit"  value="Atender" disabled>
+               </div>
+                
+               <div th:if="${item.estado =='RECHAZADO'}">
+                <input  type="submit"  value="Atender" disabled>
+               </div>
+               
+               <div th:if="${item.estado =='TERMINADO'}">
+                <input  type="submit"  value="Atender" disabled>
+               </div>
+              </form>
+            </td>
+
+            <td>
+              <form role="form" th:action="@{/especialista/servicios-requeridos}" th:method="post" class="mt-4">
+                <input type="hidden" name="btnEnvio" value="1">
+                <input type="hidden" name="idservicio" th:value=${item.id}>
+                <input type="hidden" name="correo" th:value=${item.correo}>
+                <input type="hidden" name="estado" th:value=${item.estado}> 
+                 <!-- <input type="submit" value="Cancelar">-->
+
+                 <div th:if="${item.estado =='SOLICITADO'}">
+                  <input type="submit"  value="Cancelar">
+               </div>
+                 
+               <div th:if="${item.estado =='EN_PROCESO'}">
+                <input  type="submit"  value="Cancelar" disabled>
+               </div>
+                
+               <div th:if="${item.estado =='RECHAZADO'}">
+                <input  type="submit"  value="Cancelar" disabled>
+               </div>
+               
+               <div th:if="${item.estado =='TERMINADO'}">
+                <input  type="submit"  value="Cancelar" disabled>
+               </div>
+              </form>
+            </td>
+
+            <td>
+              <form role="form" th:action="@{/especialista/servicios-requeridos}" th:method="post" class="mt-4">
+                <input type="hidden" name="btnEnvio" value="2">
+                <input type="hidden" name="idservicio" th:value=${item.id}>
+                <input type="hidden" name="correo" th:value=${item.correo}>
+                <input type="hidden" name="estado" th:value=${item.estado}> 
+               <!--  <input type="submit" value="Finalizar" disabled > -->
+
+               <div th:if="${item.estado =='SOLICITADO'}">
+                <input type="submit"  value="Finalizar" disabled>
+             </div>
+
+             <div th:if="${item.estado =='EN_PROCESO'}">
+              <input  type="submit"  value="Finalizar">
+             </div>
+              
+             <div th:if="${item.estado =='RECHAZADO'}">
+              <input  type="submit"  value="Finalizar" disabled>
+             </div>
+             
+             <div th:if="${item.estado =='TERMINADO'}">
+              <input  type="submit"  value="Finalizar" disabled>
+             </div>
+              </form>
+            
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
-  </form>
 </div>
 
 <th:block th:replace="footer"></th:block>
+
+<script language="javascript">
+  var queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  console.log(urlParams.get('id'))
+  document.getElementById('txtId').value = urlParams.get('id');
+</script>
 
 
 </html>

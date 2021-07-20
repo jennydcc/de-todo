@@ -11,12 +11,12 @@
     <div class="row">
       <label for="direccion" class="col-sm-2 col-form-label">Categoría</label>
       <div class="col-sm-4">
-        <select class="form-select form-select-sm" name="idEspecialidad" required>
+        <select class="form-select form-select-sm" name="idEspecialidad" id="idEspecialidad" required>
           <option th:each="item: ${especialidad}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
         </select>
       </div>
       <div class="col-md-3">
-        <button type="button" class="btn btn-primary">Buscar Especialista</button>
+        <button  onclick="buscarEspecialista()"  type="buttom" class="btn btn-primary">Buscar Especialista</button>
       </div>
       <div class="col-md-3">
         <div class="d-flex">
@@ -55,7 +55,8 @@
         <div class="mb-3 row">
           <label for="telefono" class="col-sm-4 col-form-label">Teléfono</label>
           <div class="col-sm-8">
-            <input type="text" id="telefono" name="telefono" class="form-control" required />
+            <input type="tel" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..?)\../g, '$1');"  id="telefono" name="telefono" class="form-control"  maxlength="9"
+            required >
           </div>
         </div>
         <div class="mb-3 row">
@@ -71,6 +72,15 @@
           <input type="date" id="fecha" name="fecha" class="form-control" required />
         </div>
       </div>
+      <div class="mb-3 row">
+        <label for="distrito" class="col-sm-2 col-form-label">Distrito</label>
+        <div class="col-sm-4">
+          <select class="form-select form-select-sm" name="idDistrito" required>
+            <option th:each="item: ${distrito}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+          </select>
+        </div>
+      </div>
+      <input type="hidden" name="estado" value="SOLICITADO">
     </div>
     <div class="d-flex">
       <div class="mt-3">
@@ -81,4 +91,22 @@
 </div>
 
 <th:block th:replace="footer"></th:block>
+
+<script>
+  function buscarEspecialista() {
+    $.ajax({
+			url:"/api/v1/especialistas/espe_act/"+$("#idEspecialidad").val(),
+			success:function(result){
+			console.log(result);
+			}
+		})
+
+
+    }
+   
+  
+  
+  </script>
+  
+
 </html>

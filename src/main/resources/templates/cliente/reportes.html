@@ -4,39 +4,112 @@
 <th:block th:replace="header"></th:block>
 <th:block th:replace="cliente/_header"></th:block>
 
-<div class="container">
+<div class="container mt-6 pt-3">
+ <h1>Reportes de Clientes</h1>
+ <form role="form" th:action="@{/cliente/reportes}" th:method="post" class="mt-4">
+ <div class="row">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Marlk</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="col-md-2">
+        <label for="criterios" >Criterio de Busqueda</label>
+    </div>
+    <div class="col-md-2">
+        <select class="form-select form-select-sm" name="criterio" required>
+          <option value="1">Por rango de fechas</option>
+          <option value="2">Distrito</option>
+          <option value="3">Calificacion</option>
+          <option value="4">Estado</option>
+       
+        </select>
+      </div>
 
-</div>
+    <div class="col-md-2">
+        <label for="fecha" >Fecha de Inicio</label>
+    </div>
+        <div class="col-md-2">
+          <input type="date" id="fecha" name="fecha" class="form-control" required />
+        </div>
+        <div class="col-md-2">
+            <label for="fecha" >Fecha de Fin</label>
+        </div>
+         <div class="col-md-2">
+              <input type="date" id="fecha" name="fecha" class="form-control" required />
+        </div>
+    </div>  
+    
+    <div class="row">
+        <div class="col-md-2">
+          <label for="distrito" class="col-sm-3 col-form-label">Distrito</label>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select form-select-sm" name="idDistrito" required>
+            <option th:each="item: ${distrito}" th:text="${item.nombre}" th:attr="value=${item.id}"></option>
+          </select>
+          </div>
+          <div class="col-md-2">
+            <label for="fecha" >Calificacion</label>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" name="calificacion" required>
+              <option value="1">Alta</option>
+              <option value="2">Baja</option>
+              <option value="3">Media</option>
+              
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="fecha" >Estado</label>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" name="estado" required>
+              <option value="1">Finalizo</option>
+              <option value="2">Pendiente</option>
+              <option value="3">Rechazado</option>
+              
+            </select>
+          </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+      <input type="submit" value="BUSCAR" class="btn app-bg-darken-primary app-bg-primary text-white" />
+      </div>
+      <div class="col-sm-2">
+        <a href="#" onclick="print()" class="btn app-bg-darken-primary text-white no-print">Imprimir  <i class="bi bi-printer-fill"></i></a>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Especialista</th>
+          <th scope="col">Fecha Solicitada</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Calficacion</th>
+          <th scope="col">Distrito</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+          <tr th:each="item: ${serviciosSolicitados}">
+            <td th:text="${item.detalle}"></td>
+            <td th:text="${item.especialistaNombre}"></td>
+            <td th:text="${item.fecha}"></td>
+            <td th:text="${item.estado}"></td>
+            <td>Media</td>
+            <td th:text="${item.distritoNombre}"></td>
+            
+            
+          </tr>
+    
+        
+        
+      </tbody>
+    </table>
+    </form>
+    
+    </div>
 
 <th:block th:replace="footer"></th:block>
 

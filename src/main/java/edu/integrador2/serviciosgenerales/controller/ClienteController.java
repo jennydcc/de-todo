@@ -12,6 +12,8 @@ import edu.integrador2.serviciosgenerales.dto.ClienteDto;
 import edu.integrador2.serviciosgenerales.dto.ServicioDto;
 import edu.integrador2.serviciosgenerales.entity.Cliente;
 import edu.integrador2.serviciosgenerales.entity.Servicio;
+import edu.integrador2.serviciosgenerales.entity.Usuario;
+import edu.integrador2.serviciosgenerales.security.SessionManager;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.DistritoService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
@@ -63,7 +65,10 @@ public class ClienteController {
   public String serviciosSolicitados(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
-    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+   /// uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+    Usuario usuario = SessionManager.getUsuario();
+    System.out.println(usuario.getId());
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listarCliente(usuario.getId()));
     return "cliente/servicios-solicitados";
   }
 
@@ -81,6 +86,7 @@ public class ClienteController {
     Template.addPageIndex(uiModel, 1);
     uiModel.addAttribute("especialidad", especialidadService.list());
     uiModel.addAttribute("especialistas", especialistaService.listar());
+    uiModel.addAttribute("distrito", distritoService.listar());
     return "cliente/solicitar-servicio";
   }
 
@@ -96,6 +102,11 @@ public class ClienteController {
   public String reportesclientes(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 2);
+    uiModel.addAttribute("distrito", distritoService.listar());
+   // uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+   Usuario usuario = SessionManager.getUsuario();
+    System.out.println(usuario.getId());
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listarCliente(usuario.getId()));
     return "cliente/reportes";
   }
 
@@ -105,5 +116,9 @@ public class ClienteController {
     Template.addPageIndex(uiModel, 3);
     return "cliente/modificar";
   }
+
+
+  
+    
 
 }

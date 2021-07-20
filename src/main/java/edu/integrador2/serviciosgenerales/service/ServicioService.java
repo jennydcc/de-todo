@@ -3,15 +3,18 @@ package edu.integrador2.serviciosgenerales.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.integrador2.serviciosgenerales.dto.EnvioCorreoDto;
 import edu.integrador2.serviciosgenerales.dto.ObtenerServicioDto;
 import edu.integrador2.serviciosgenerales.dto.ServicioDto;
 import edu.integrador2.serviciosgenerales.entity.Servicio;
 import edu.integrador2.serviciosgenerales.repository.ServicioRepository;
+
 
 @Service
 public class ServicioService {
@@ -22,15 +25,54 @@ public class ServicioService {
 
   public List<ServicioDto> listar() {
     List<Servicio> list = (List<Servicio>) entityRepositoy.findAll();
+    //System.out.println(list);
     List<ServicioDto> result = new ArrayList<>();
     if (!list.isEmpty()) {
       for (Servicio rec : list) {
         ServicioDto dto = modelMapper.map(rec, ServicioDto.class);
+        dto.setCorreo(rec.getCliente().getCorreo());
         result.add(dto);
       }
     }
+    System.out.println("prueba");
+    System.out.println(list.get(0).getCliente().getCorreo());
+
     return result;
   }
+
+  public List<ServicioDto> listarEspcialista(Long id) {
+    List<Servicio> list = (List<Servicio>) entityRepositoy.getListServicios(id);
+    //System.out.println(list);
+    List<ServicioDto> result = new ArrayList<>();
+    if (!list.isEmpty()) {
+      for (Servicio rec : list) {
+        ServicioDto dto = modelMapper.map(rec, ServicioDto.class);
+        dto.setCorreo(rec.getCliente().getCorreo());
+        result.add(dto);
+      }
+    }
+
+    return result;
+  }
+
+  public List<ServicioDto> listarCliente(Long id) {
+    List<Servicio> list = (List<Servicio>) entityRepositoy.getListServiciosC(id);
+    //System.out.println(list);
+    List<ServicioDto> result = new ArrayList<>();
+    if (!list.isEmpty()) {
+      for (Servicio rec : list) {
+        ServicioDto dto = modelMapper.map(rec, ServicioDto.class);
+        dto.setCorreo(rec.getCliente().getCorreo());
+        result.add(dto);
+      }
+    }
+
+    return result;
+  }
+
+
+
+
 
   public void eliminar(Long id) {
     entityRepositoy.deleteById(id);
@@ -38,6 +80,19 @@ public class ServicioService {
 
   public Servicio registrarSolicitud(Servicio model) {
     return entityRepositoy.save(model);
+  }
+
+
+  public void  update(EnvioCorreoDto obj) {
+    // Obtener objeto actual
+    Optional<Servicio> optional = entityRepositoy.findById(Long.parseLong(obj.getIdservicio()));
+    if (optional.isPresent()) {
+        Servicio currentRecord = optional.get();
+        currentRecord.setEstado(obj.getEstado());
+        entityRepositoy.save(currentRecord);
+    }
+    // Entidad -> Dto
+   // return modelMapper.map(obj, ServicioDto.class);
   }
 
 

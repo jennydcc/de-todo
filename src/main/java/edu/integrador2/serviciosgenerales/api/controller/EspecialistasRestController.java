@@ -1,5 +1,6 @@
 package edu.integrador2.serviciosgenerales.api.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -36,6 +37,23 @@ public class EspecialistasRestController {
   public Optional<EspecialistaDto> getLoggedIn() {
     return defaultService.getLoggedIn();
   }
+
+  @GetMapping(value = "/espe_act/{id}"  )
+  public List<Especialista> getEspecialistaByActividad(@PathVariable Long id) {
+    Especialista e = new Especialista();
+    e.setId(1L);
+    e.setNombre("prueba"); 
+    Especialista e1 = new Especialista();
+    e1.setId(2L);
+    e1.setNombre("prueba2");
+    List<Especialista> es= new ArrayList<>(); 
+    es.add(e);
+    es.add(e1);
+   // return defaultService.getLoggedIn();
+   System.out.println(id);
+   return es;
+  }
+
 
   @GetMapping(value = "/{id}")
   public Optional<Especialista> get(@PathVariable Long id) {

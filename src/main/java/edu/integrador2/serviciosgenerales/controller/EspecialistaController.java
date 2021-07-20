@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.integrador2.serviciosgenerales.dto.ActividadDto;
+import edu.integrador2.serviciosgenerales.dto.EnvioCorreoDto;
 import edu.integrador2.serviciosgenerales.dto.EspecialistaDto;
 import edu.integrador2.serviciosgenerales.entity.Actividad;
 import edu.integrador2.serviciosgenerales.entity.Especialista;
+import edu.integrador2.serviciosgenerales.entity.Usuario;
+import edu.integrador2.serviciosgenerales.security.SessionManager;
 import edu.integrador2.serviciosgenerales.service.ActividadService;
 import edu.integrador2.serviciosgenerales.service.ClienteService;
 import edu.integrador2.serviciosgenerales.service.DistritoService;
 import edu.integrador2.serviciosgenerales.service.EspecialistaService;
+import edu.integrador2.serviciosgenerales.service.NotificationService;
 import edu.integrador2.serviciosgenerales.service.ServicioService;
 import edu.integrador2.serviciosgenerales.service.EspecialidadService;
 
@@ -42,6 +46,8 @@ public class EspecialistaController {
   ActividadService actividadService;
   @Autowired
   ServicioService servicioService;
+  @Autowired
+  NotificationService notificationService;
 
   @GetMapping("/especialista/")
   public String serviciosrequeridos(Model uiModel) throws Exception {
@@ -99,25 +105,74 @@ public class EspecialistaController {
   public String solicitarServicio(Model uiModel) throws Exception {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 0);
-    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+    //System.out.println(servicioService.listar());
+    Usuario usuario = SessionManager.getUsuario();
+    System.out.println(usuario.getId());
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listarEspcialista(usuario.getId()));
     return "especialista/servicios-requeridos";
   }
+
+
+  @PostMapping("/especialista/servicios-requeridos")
+  public String atenderServicio(EnvioCorreoDto dto, Model uiModel) throws Exception{
+    Template.addGlobalAttributes(uiModel);
+    System.out.println("Envio correo segun valor");
+    System.out.println(dto);
+    if (dto.getBtnEnvio().equalsIgnoreCase("0")) {
+      notificationService.sendNotificationA(dto);
+      if(dto.getEstado().equalsIgnoreCase("SOLICITADO")){
+        dto.setEstado("EN_PROCESO");
+        servicioService.update(dto);
+      }
+      
+    } else if(dto.getBtnEnvio().equalsIgnoreCase("1")) {
+      notificationService.sendNotificationR(dto);
+      if(dto.getEstado().equalsIgnoreCase("SOLICITADO")){
+        dto.setEstado("RECHAZADO");
+        servicioService.update(dto);
+      }
+    }
+     else {
+    if(dto.getEstado().equalsIgnoreCase("EN_PROCESO")){
+      dto.setEstado("TERMINADO");
+      servicioService.update(dto);
+    }
+  }
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+    return solicitarServicio(uiModel);
+  
+  }
+
 
   @GetMapping("/especialista/registrarservicio")
   public String registrarServicio(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
     uiModel.addAttribute("especialidades", especialidadService.list());
     uiModel.addAttribute("especialistas", especialistaService.listar());
-    Template.addPageIndex(uiModel, 1);
     return "especialista/registrarservicio";
   }
 
+
+
+    @GetMapping("/especialista/reportes")
+  public String reportesespecialista(Model uiModel) {
+    Template.addGlobalAttributes(uiModel);
+    Template.addPageIndex(uiModel, 1);
+    uiModel.addAttribute("distrito", distritoService.listar());
+    ///uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
+    Usuario usuario = SessionManager.getUsuario();
+    System.out.println(usuario.getId());
+    uiModel.addAttribute("serviciosSolicitados", servicioService.listarEspcialista(usuario.getId()));
+    return "especialista/reportes";
+  }
+
   @GetMapping("/especialista/comentarios")
-  public String especislistacomentarios(Model uiModel) {
+  public String especialistacomentarios(Model uiModel) {
     Template.addGlobalAttributes(uiModel);
     Template.addPageIndex(uiModel, 2);
     return "especialista/comentarios";
   }
+  
 
   @GetMapping("/especialista/modificar")
   public String modificarespecialista(Model uiModel) {
@@ -126,13 +181,9 @@ public class EspecialistaController {
     return "especialista/modificar";
   }
 
-  @GetMapping("/especialista/reportes")
-  public String reportesespecialista(Model uiModel) {
-    Template.addGlobalAttributes(uiModel);
-    Template.addPageIndex(uiModel, 4);
-    uiModel.addAttribute("distrito", distritoService.listar());
-    uiModel.addAttribute("serviciosSolicitados", servicioService.listar());
-    return "especialista/reportes";
-  }
+
+
+
+  
 
 }
